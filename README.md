@@ -8,10 +8,16 @@
 
 
 #First milestone deliverable 
+
 *[] Description 
+
 *[] Intended users
-*[] ERD's 
+
+*[] Entity Realtionship Diagrams (ERD's) 
+
 *[] Wireframes
+
 *[] User Stories 
+
 
 

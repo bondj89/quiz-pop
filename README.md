@@ -1,5 +1,3 @@
-# Project Title Here
-
 ## Introduction 
 
 ##Overview

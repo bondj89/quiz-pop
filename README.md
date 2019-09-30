@@ -13,7 +13,7 @@
 
 *[] Intended users
 
-*[] Entity Realtionship Diagrams (ERD's) 
+*[] Entity Relationship Diagrams (ERD's) 
 
 *[] Wireframes
 

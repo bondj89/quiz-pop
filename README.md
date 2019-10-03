@@ -3,7 +3,7 @@ For my personal android project, I chose to create an app called Quiz-Pop. The a
 simple and user-friendly and consist of multiple choice, true or false type questions. 
 
 
-##Description 
+## Description 
 Quiz-Pop will be an Android app will be an all you can play trivia game that 
 allows players to answer questions from their favorite topics. 
 Players can choose questions in the format of multiple choice and true or false. 

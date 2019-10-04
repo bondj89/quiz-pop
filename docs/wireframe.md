@@ -1,3 +1,3 @@
 ## Wireframe Diagram 
 
-[![Wireframe](quiz-pop)](quiz-pop.wireframe.pdf)
+[![Wireframe](quiz-pop.wireframe.png)](quiz-pop.wireframe.pdf)

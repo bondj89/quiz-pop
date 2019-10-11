@@ -36,11 +36,11 @@ flexing their brain and competing with friends.
 
 # Second Milestone Deliverable 
 
-+ [ ]
++ 
 
-+ [ ]
++ 
 
-+ [ ]
++ 
 
 
 

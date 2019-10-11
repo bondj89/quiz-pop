@@ -34,5 +34,16 @@ flexing their brain and competing with friends.
 
 + [x] User Stories 
 
+# Second Milestone Deliverable 
+
++ []
+
++ []
+
++ []
+
+
+
+
 
 

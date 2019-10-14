@@ -1,5 +1,7 @@
 package com.joelbond.quizpop.model.entity;
 
-public class Question {
+
+  @ParcelClass("Question")
+  public class Question extends ParseObject
 
 }

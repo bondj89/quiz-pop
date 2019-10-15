@@ -1,4 +1,4 @@
-package com.joelbond.quizpop;
+package dev.jbond.quizpop;
 
 import org.junit.Test;
 

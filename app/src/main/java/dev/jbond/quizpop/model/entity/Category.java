@@ -1,11 +1,8 @@
 package dev.jbond.quizpop.model.entity;
 
+import androidx.room.Entity;
 
-
-class category {
-
+@Entity
+public class Category {
 
 }
-
-
-

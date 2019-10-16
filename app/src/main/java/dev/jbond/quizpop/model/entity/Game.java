@@ -17,12 +17,19 @@ import androidx.room.PrimaryKey;
         )
     }
 )
-
 public class Game {
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "game_id")
     private long id;
+
+    private enum Difficulty {
+      EASY, MEDIUM, HARD;
+    }
+
+    private int Length;
+
+
 
 
   }

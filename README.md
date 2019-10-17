@@ -4,7 +4,7 @@ simple and user-friendly and consist of multiple choice, true or false type ques
 
 
 ## Description 
-Quiz-Pop will be an Android app will be an all you can play trivia game that 
+Quiz-Pop will be an Android app that is an all you can play trivia game that 
 allows players to answer questions from their favorite topics. 
 Players can choose questions in the format of multiple choice and true or false. 
 Players can also choose the difficulty level and compete against their 

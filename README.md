@@ -1,14 +1,15 @@
 ## Introduction 
-For my personal android project, I chose to create an app called Quiz-Pop. The app will be 
-simple and user-friendly and consist of multiple choice, true or false type questions. 
+For my personal android project, I chose to create an app called Quiz-Pop. 
+The app is simple and will consist of multiple choice, true or false type 
+questions of general trivia knowledge. 
 
 
 ## Description 
-Quiz-Pop will be an Android app that is an all you can play trivia game that 
+Developed in Android, QuizPop is an all you can play trivia game that 
 allows players to answer questions from their favorite topics. 
 Players can choose questions in the format of multiple choice and true or false. 
-Players can also choose the difficulty level and compete against their 
-friends using facebook or firebase integration. 
+Players can choose the difficulty level and compete against their 
+friends by signing in. 
 
 ## Intended Users 
 Anyone that loves to play trivia from the palm of their hands. 
@@ -22,7 +23,7 @@ flexing their brain and competing with friends.
 ### [Wireframe Diagram](docs/wireframe.md)
 
 
-# First milestone deliverable 
+# First milestone deliverable (Oct. 2nd)
 
 + [x] Description 
 
@@ -34,7 +35,7 @@ flexing their brain and competing with friends.
 
 + [x] User Stories 
 
-# Second Milestone Deliverable 
+# Second Milestone Deliverable (Oct. 28th)
 
 + 
 

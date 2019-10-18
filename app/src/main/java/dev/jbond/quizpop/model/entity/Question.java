@@ -1,12 +1,10 @@
 package dev.jbond.quizpop.model.entity;
 
 
-import android.app.Activity;
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
-import androidx.room.Entity;
-import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
+import java.util.List;
 
 public class Question {
 
@@ -14,11 +12,24 @@ public class Question {
   @ColumnInfo(name = "question_id")
   private long id;
 
-  @NonNull
-  @ColumnInfo(name = "text", index = true)
-  private String text;
+  private String category;
 
-  private boolean correct;
+  private enum Difficulty {
+    easy, medium, hard
+  }
+
+  @NonNull
+  private String questionText;
+
+  private String correctAnswers;
+
+  private List incorrectAnswers;
+
+
+
+
+
+
 
 
 }

@@ -14,6 +14,10 @@ public class Question {
 
   private String category;
 
+  private enum Type {
+    MULTIPLE, TRUE_FALSE
+  }
+
   private enum Difficulty {
     easy, medium, hard
   }
@@ -23,7 +27,7 @@ public class Question {
 
   private String correctAnswers;
 
-  private List incorrectAnswers;
+  private List<String> incorrectAnswers;
 
 
 

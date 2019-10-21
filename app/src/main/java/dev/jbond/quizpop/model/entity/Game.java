@@ -22,16 +22,14 @@ import androidx.room.PrimaryKey;
         )
     }
 )
-
-
 public class Game {
   @PrimaryKey(autoGenerate = true)
   @ColumnInfo(name = "game_id")
   private long id;
 
 
-  @ColumnInfo(name = "question_id")
-  private Long questionId;
+  @ColumnInfo(name = "difficulty")
+  private Long difficultyId;
 
   @ColumnInfo(name = "user_id")
   private Long userId;
@@ -47,12 +45,12 @@ public class Game {
     this.id = id;
   }
 
-  public Long getQuestionId() {
-    return questionId;
+  public Long getDifficultyId() {
+    return difficultyId;
   }
 
-  public void setQuestionId(Long questionId) {
-    this.questionId = questionId;
+  public void setQuestionId(Long difficultyId) {
+    this.difficultyId = difficultyId;
   }
 
   public Long getUserId() {
@@ -70,4 +68,6 @@ public class Game {
   public void setScore(long score) {
     this.score = score;
   }
+
+
 }

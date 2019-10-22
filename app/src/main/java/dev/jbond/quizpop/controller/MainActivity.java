@@ -8,7 +8,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import dev.jbond.quizpop.R;
 
-public class QuizPop extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
   private TextView mTextMessage;
 

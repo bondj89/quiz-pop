@@ -4,6 +4,7 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
+import dev.jbond.quizpop.model.entity.Question.Difficulty;
 
 @Entity(
     foreignKeys = {
@@ -27,9 +28,7 @@ public class Game {
   @ColumnInfo(name = "game_id")
   private long id;
 
-
-  @ColumnInfo(name = "difficulty")
-  private Long difficultyId;
+  private Difficulty difficulty;
 
   @ColumnInfo(name = "user_id")
   private Long userId;
@@ -45,12 +44,12 @@ public class Game {
     this.id = id;
   }
 
-  public Long getDifficultyId() {
-    return difficultyId;
+  public Difficulty getDifficulty() {
+    return difficulty;
   }
 
   public void setQuestionId(Long difficultyId) {
-    this.difficultyId = difficultyId;
+    this.difficulty = difficulty;
   }
 
   public Long getUserId() {

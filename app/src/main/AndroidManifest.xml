@@ -12,7 +12,7 @@
     android:theme="@style/AppTheme">
     <activity
       android:label="QuizPop"
-      android:name=".controller.QuizPop">
+      android:name=".controller.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
 

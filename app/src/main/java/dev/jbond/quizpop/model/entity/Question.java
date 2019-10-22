@@ -16,11 +16,14 @@ public class Question {
 
   private String type;
 
-  private String difficulty;
-
   @NonNull
-  private String questionText;
+  private Difficulty difficulty;
 
+  @ColumnInfo(name = "question_text")
+  @NonNull
+  private String text;
+
+  @ColumnInfo
   private String correctAnswers;
 
   private List<String> incorrectAnswers;
@@ -50,21 +53,22 @@ public class Question {
     this.type = type;
   }
 
-  public String getDifficulty() {
+  @NonNull
+  public Difficulty getDifficulty() {
     return difficulty;
   }
 
-  public void setDifficulty(String difficulty) {
+  public void setDifficulty(@NonNull Difficulty difficulty) {
     this.difficulty = difficulty;
   }
 
   @NonNull
-  public String getQuestionText() {
-    return questionText;
+  public String getText() {
+    return text;
   }
 
-  public void setQuestionText(@NonNull String questionText) {
-    this.questionText = questionText;
+  public void setText(@NonNull String text) {
+    this.text = text;
   }
 
   public String getCorrectAnswers() {
@@ -81,5 +85,12 @@ public class Question {
 
   public void setIncorrectAnswers(List<String> incorrectAnswers) {
     this.incorrectAnswers = incorrectAnswers;
+  }
+
+  public enum Difficulty {
+
+    EASY,
+    MEDIUM,
+    HARD
   }
 }

@@ -39,11 +39,21 @@ flexing their brain and competing with friends.
 # Second Milestone Deliverable (Oct. 28th)
 #####[Milestone #2](https://deep-dive-coding-java-cohort-8.github.io/2019/10/22/android-milestone-2-rubric.html)
 
-+ [ ]Project Description 
++ [ ] Project Description 
 
-+ 
++ [ ] Intended users 
 
-+ 
++ [ ] User Stories 
+
++ [ ] Entity Relationship Diagram 
+
++ [ ] DAO Interfaces 
+
++ [ ] Database classes
+
++ [ ] DDL
+
++ [ ] Chrome Inspectability of data model 
 
 
 

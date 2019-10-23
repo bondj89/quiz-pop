@@ -1,5 +1,5 @@
 ## Introduction 
-For my personal android project, I chose to create an app called Quiz-Pop. 
+For my personal android project, I chose to create an app called QuizPop. 
 The app is simple and will consist of multiple choice, true or false type 
 questions of general trivia knowledge. 
 
@@ -37,8 +37,9 @@ flexing their brain and competing with friends.
 + [x] User Stories 
 
 # Second Milestone Deliverable (Oct. 28th)
+#####[Milestone #2](https://deep-dive-coding-java-cohort-8.github.io/2019/10/22/android-milestone-2-rubric.html)
 
-+ 
++ [ ]Project Description 
 
 + 
 

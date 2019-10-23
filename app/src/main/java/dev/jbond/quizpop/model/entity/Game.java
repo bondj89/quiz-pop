@@ -24,10 +24,10 @@ public class Game {
   private Difficulty difficulty;
 
   @ColumnInfo(name = "user_id")
-  private Long userId;
+  private long userId;
 
   @ColumnInfo(index = true,name = "score")
-  private long score;
+  private int score;
 
   public long getId() {
     return id;
@@ -53,13 +53,11 @@ public class Game {
     this.userId = userId;
   }
 
-  public long getScore() {
+  public int getScore() {
     return score;
   }
 
-  public void setScore(long score) {
+  public void setScore(int score) {
     this.score = score;
   }
-
-
 }

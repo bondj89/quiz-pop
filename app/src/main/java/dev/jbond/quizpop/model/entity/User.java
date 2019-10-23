@@ -7,7 +7,8 @@ import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
 @Entity(
-    indices = @Index(value = {"last_name", "first_name"}, unique = true)
+    indices =
+      @Index(value = "oauth_key", unique = true)
 )
 public class User {
 
@@ -15,16 +16,9 @@ public class User {
   @ColumnInfo(name = "user_id")
   private long id;
 
-  @NonNull
-  @ColumnInfo(name = "last_name", collate = ColumnInfo.NOCASE)
-  private String lastName;
+  @ColumnInfo(name = "oauth_key")
+  private String oAuthKey;
 
-  @NonNull
-  @ColumnInfo(name = "first_name", collate = ColumnInfo.NOCASE)
-  private String firstName;
-
-  @ColumnInfo(index = true, collate = ColumnInfo.NOCASE)
-  private String email;
 
   @ColumnInfo(index = true,name = "high_score")
   private long highScore;
@@ -37,31 +31,7 @@ public class User {
     this.id = id;
   }
 
-  @NonNull
-  public String getLastName() {
-    return lastName;
-  }
 
-  public void setLastName(@NonNull String lastName) {
-    this.lastName = lastName;
-  }
-
-  @NonNull
-  public String getFirstName() {
-    return firstName;
-  }
-
-  public void setFirstName(@NonNull String firstName) {
-    this.firstName = firstName;
-  }
-
-  public String getEmail() {
-    return email;
-  }
-
-  public void setEmail(String email) {
-    this.email = email;
-  }
 
   public long getHighScore() {
     return highScore;

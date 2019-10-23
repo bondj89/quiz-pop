@@ -3,9 +3,11 @@ package dev.jbond.quizpop.model.entity;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
+import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 import java.util.List;
 
+@Entity
 public class Question {
 
   @PrimaryKey(autoGenerate = true)
@@ -23,11 +25,7 @@ public class Question {
   @NonNull
   private String text;
 
-  @ColumnInfo
-  private String correctAnswers;
-
-  private List<String> incorrectAnswers;
-
+  private Boolean correct;
 
   public long getId() {
     return id;
@@ -71,20 +69,12 @@ public class Question {
     this.text = text;
   }
 
-  public String getCorrectAnswers() {
-    return correctAnswers;
+  public Boolean getCorrect() {
+    return correct;
   }
 
-  public void setCorrectAnswers(String correctAnswers) {
-    this.correctAnswers = correctAnswers;
-  }
-
-  public List<String> getIncorrectAnswers() {
-    return incorrectAnswers;
-  }
-
-  public void setIncorrectAnswers(List<String> incorrectAnswers) {
-    this.incorrectAnswers = incorrectAnswers;
+  public void setCorrect(Boolean correct) {
+    this.correct = correct;
   }
 
   public enum Difficulty {
@@ -93,4 +83,7 @@ public class Question {
     MEDIUM,
     HARD
   }
+
+
+
 }

@@ -17,6 +17,9 @@ public class QuizPopApplication extends Application {
       @Override
       public void run() {
         database.getUserDao().delete();
+        database.getAnswerDao().delete();
+        database.getGameDao().delete();
+        database.getQuestionDao().delete();
       }
     }).start();
   }

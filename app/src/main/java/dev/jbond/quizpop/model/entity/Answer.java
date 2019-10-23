@@ -8,9 +8,9 @@ import androidx.room.PrimaryKey;
 @Entity(
     foreignKeys = {
         @ForeignKey(
-            entity = Answer.class,
-            childColumns = "answer_id",
-            parentColumns = "answer_id",
+            entity = Question.class,
+            childColumns = "question_id",
+            parentColumns = "question_id",
             onDelete = ForeignKey.CASCADE
         )
     }
@@ -20,6 +20,9 @@ public class Answer {
   @PrimaryKey(autoGenerate = true)
   @ColumnInfo(name = "answer_id")
   private long id;
+
+  @ColumnInfo(name = "question_id", index = true)
+  private long questionId;
 
   private String text;
 

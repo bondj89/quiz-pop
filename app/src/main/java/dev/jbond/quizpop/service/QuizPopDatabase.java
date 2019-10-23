@@ -5,11 +5,17 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
+import dev.jbond.quizpop.model.dao.AnswerDao;
+import dev.jbond.quizpop.model.dao.GameDao;
+import dev.jbond.quizpop.model.dao.QuestionDao;
 import dev.jbond.quizpop.model.dao.UserDao;
+import dev.jbond.quizpop.model.entity.Answer;
+import dev.jbond.quizpop.model.entity.Game;
+import dev.jbond.quizpop.model.entity.Question;
 import dev.jbond.quizpop.model.entity.User;
 
 @Database(
-    entities = {User.class},
+    entities = {User.class, Answer.class, Game.class, Question.class},
     version = 1, exportSchema = true
 )
 // @TypeConverters(QuizPopDatabase.Converter.class)
@@ -29,11 +35,11 @@ public abstract class QuizPopDatabase extends RoomDatabase {
 
   public abstract UserDao getUserDao();
 
-  // public abstract CardDao getCardDao();
+  public abstract AnswerDao getAnswerDao();
 
-  // public abstract RoundDao getRoundDao();
+  public abstract GameDao getGameDao();
 
-  // public abstract HandDao getHandDao();
+  public abstract QuestionDao getQuestionDao();
 
   private static class InstanceHolder {
 

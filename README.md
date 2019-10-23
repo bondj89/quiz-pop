@@ -38,13 +38,13 @@ flexing their brain and competing with friends.
 
 # [Second Milestone Deliverable (Oct. 28th)](https://deep-dive-coding-java-cohort-8.github.io/2019/10/22/android-milestone-2-rubric.html)
 
-+ [ ] Project Description 
++ [X] Project Description 
 
-+ [ ] Intended users 
++ [X] Intended users 
 
-+ [ ] User Stories 
++ [X] User Stories 
 
-+ [ ] Entity Relationship Diagram 
++ [X] Entity Relationship Diagram 
 
 + [ ] DAO Interfaces 
 

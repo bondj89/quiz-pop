@@ -46,6 +46,8 @@ flexing their brain and competing with friends.
 
 + [X] Entity Relationship Diagram 
 
++ [X] Wireframes
+
 + [ ] DAO Interfaces 
 
 + [ ] Database classes

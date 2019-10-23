@@ -51,4 +51,12 @@ public class Answer {
   public void setCorrect(boolean correct) {
     this.correct = correct;
   }
+
+  public long getQuestionId() {
+    return questionId;
+  }
+
+  public void setQuestionId(long questionId) {
+    this.questionId = questionId;
+  }
 }

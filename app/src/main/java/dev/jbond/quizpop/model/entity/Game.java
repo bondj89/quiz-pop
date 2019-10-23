@@ -60,4 +60,8 @@ public class Game {
   public void setScore(int score) {
     this.score = score;
   }
+
+  public void setDifficulty(Difficulty difficulty) {
+    this.difficulty = difficulty;
+  }
 }

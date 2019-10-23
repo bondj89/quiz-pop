@@ -9,17 +9,10 @@ import dev.jbond.quizpop.model.entity.Question.Difficulty;
 @Entity(
     foreignKeys = {
         @ForeignKey(
-            entity = Question.class,
-            childColumns = "question_id",
-            parentColumns = "question_id",
-            onDelete = ForeignKey.CASCADE
-        ),
-        @ForeignKey(
             entity = User.class,
             childColumns = "user_id",
             parentColumns = "user_id",
             onDelete = ForeignKey.CASCADE
-
         )
     }
 )

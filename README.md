@@ -22,6 +22,7 @@ flexing their brain and competing with friends.
 
 ### [Wireframe Diagram](docs/wireframe.md)
 
+### [DDL](docs/ddl.md)
 
 # First milestone deliverable (Oct. 2nd)
 

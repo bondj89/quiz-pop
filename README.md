@@ -48,13 +48,13 @@ related activities, flexing their brain and competing with friends.
 
 + [X] Wireframes
 
-+ [ ] DAO Interfaces 
++ [X] DAO Interfaces 
 
-+ [ ] Database classes
++ [X] Database classes
 
-+ [ ] DDL
++ [X] DDL
 
-+ [ ] Chrome Inspectability of data model 
++ [X] Chrome Inspectability of data model 
 
 
 

@@ -3,6 +3,7 @@ package dev.jbond.quizpop;
 import android.app.Application;
 import android.content.Context;
 import com.facebook.stetho.Stetho;
+import dev.jbond.quizpop.service.GoogleSignInService;
 import dev.jbond.quizpop.service.QuizPopDatabase;
 
 public class QuizPopApplication extends Application {
@@ -12,6 +13,7 @@ public class QuizPopApplication extends Application {
     super.onCreate();
     Stetho.initializeWithDefaults(this);
     QuizPopDatabase.setApplicationContext(this);
+    GoogleSignInService.setApplicationContext(this);
     final QuizPopDatabase database = QuizPopDatabase.getInstance();
     new Thread(new Runnable() {
       @Override

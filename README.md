@@ -22,7 +22,7 @@ related activities, flexing their brain and competing with friends.
 
 ### [Wireframe Diagram](docs/wireframe.md)
 
-### [DDL](docs/ddl.md)
+### [Data Definition Language (DDL) for data model](docs/ddl.md)
 
 # First milestone deliverable (Oct. 2nd)
 

@@ -29,8 +29,9 @@ related activities, flexing their brain and competing with friends.
 + [Data Definition Language (DDL) for data model](docs/ddl.md)
 
 ## Tools 
-
-
++ [Lucid Chart](https://www.lucidchart.com/pages/)
++ [Github](https://github.com/bondj89/quiz-pop)
++ [Scrum Board](https://github.com/bondj89/quiz-pop/projects/1)
 
 
 

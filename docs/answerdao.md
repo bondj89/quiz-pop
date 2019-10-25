@@ -1,67 +1,25 @@
 ## AnswerDao Source Code
 
 ```
-package dev.jbond.quizpop.model.entity;
+package dev.jbond.quizpop.model.dao;
 
-import androidx.room.ColumnInfo;
-import androidx.room.Entity;
-import androidx.room.ForeignKey;
-import androidx.room.PrimaryKey;
+import androidx.room.Dao;
+import androidx.room.Delete;
+import androidx.room.Insert;
+import androidx.room.Query;
+import dev.jbond.quizpop.model.entity.Answer;
+import dev.jbond.quizpop.model.entity.Game;
 
-@Entity(
-    foreignKeys = {
-        @ForeignKey(
-            entity = Question.class,
-            childColumns = "question_id",
-            parentColumns = "question_id",
-            onDelete = ForeignKey.CASCADE
-        )
-    }
-)
-public class Answer {
+@Dao
+public interface AnswerDao {
+  @Insert
+  long insert(Answer answer);
 
-  @PrimaryKey(autoGenerate = true)
-  @ColumnInfo(name = "answer_id")
-  private long id;
+  @Query("SELECT * FROM game WHERE  game_id = :gameId")
+  Game getById(long gameId);
 
-  @ColumnInfo(name = "question_id", index = true)
-  private long questionId;
-
-  private String text;
-
-  private boolean correct;
-
-  public long getId() {
-    return id;
-  }
-
-  public void setId(long id) {
-    this.id = id;
-  }
-
-  public String getText() {
-    return text;
-  }
-
-  public void setText(String text) {
-    this.text = text;
-  }
-
-  public boolean isCorrect() {
-    return correct;
-  }
-
-  public void setCorrect(boolean correct) {
-    this.correct = correct;
-  }
-
-  public long getQuestionId() {
-    return questionId;
-  }
-
-  public void setQuestionId(long questionId) {
-    this.questionId = questionId;
-  }
+  @Delete
+  int delete(Answer...answers);
 }
 
 ``` 

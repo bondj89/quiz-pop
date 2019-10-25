@@ -1,5 +1,6 @@
 ## Game Entity Source Code
 
+```
 package dev.jbond.quizpop.model.entity;
 
 import androidx.room.ColumnInfo;
@@ -67,3 +68,6 @@ public class Game {
     this.difficulty = difficulty;
   }
 }
+
+
+```

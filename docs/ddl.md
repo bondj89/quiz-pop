@@ -1,4 +1,4 @@
-## Data Definition Language (DDL) for data model
+## Data Definition Language (DDL) for Data Model
 
 ``` sql
 CREATE TABLE IF NOT EXISTS `User`

@@ -16,5 +16,5 @@ public interface UserDao {
   User getByOAuth(String oAuthKey);
 
   @Delete
-  int delete(User...users);
+  int delete(User... users);
 }

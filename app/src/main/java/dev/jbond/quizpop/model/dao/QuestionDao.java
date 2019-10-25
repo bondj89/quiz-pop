@@ -4,12 +4,11 @@ import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
-import dev.jbond.quizpop.model.entity.Game;
 import dev.jbond.quizpop.model.entity.Question;
-import dev.jbond.quizpop.model.entity.User;
 
 @Dao
 public interface QuestionDao {
+
   @Insert
   long insert(Question question);
 
@@ -17,6 +16,6 @@ public interface QuestionDao {
   Question getById(long questionId);
 
   @Delete
-  int delete(Question...questions);
+  int delete(Question... questions);
 
 }

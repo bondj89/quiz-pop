@@ -2,14 +2,14 @@
 
 ### Entity Source Code 
 
-+ [Answer](answer.md)
-+ [Game](game.md)
-+ [Question](question.md)
-+ [User](user.md)
++ [Answer](https://github.com/bondj89/quiz-pop/blob/master/app/src/main/java/dev/jbond/quizpop/model/entity/Answer.java)
++ [Game](https://github.com/bondj89/quiz-pop/blob/master/app/src/main/java/dev/jbond/quizpop/model/entity/Game.java)
++ [Question](https://github.com/bondj89/quiz-pop/blob/master/app/src/main/java/dev/jbond/quizpop/model/entity/Question.java)
++ [User](https://github.com/bondj89/quiz-pop/blob/master/app/src/main/java/dev/jbond/quizpop/model/entity/User.java)
 
 ### DAO Source Code
 
-+ [AnswerDao](answerdao.md)
-+ [GameDao](gamedao.md)
-+ [QuestionDao](questiondao.md)
-+ [UserDao](userdao.md)
++ [AnswerDao](https://github.com/bondj89/quiz-pop/blob/master/app/src/main/java/dev/jbond/quizpop/model/dao/AnswerDao.java)
++ [GameDao](https://github.com/bondj89/quiz-pop/blob/master/app/src/main/java/dev/jbond/quizpop/model/dao/GameDao.java)
++ [QuestionDao](https://github.com/bondj89/quiz-pop/blob/master/app/src/main/java/dev/jbond/quizpop/model/dao/QuestionDao.java)
++ [UserDao](https://github.com/bondj89/quiz-pop/blob/master/app/src/main/java/dev/jbond/quizpop/model/dao/UserDao.java)

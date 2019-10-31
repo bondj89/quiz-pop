@@ -5,7 +5,6 @@ import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-import java.util.List;
 
 @Entity
 public class Question {
@@ -26,6 +25,9 @@ public class Question {
   private String text;
 
   private Boolean correct;
+
+  private String correctAnswer;
+  private String[] incorrectAnswer;
 
   public long getId() {
     return id;
@@ -75,6 +77,22 @@ public class Question {
 
   public void setCorrect(Boolean correct) {
     this.correct = correct;
+  }
+
+  public String getCorrectAnswer() {
+    return correctAnswer;
+  }
+
+  public void setCorrectAnswer(String correctAnswer) {
+    this.correctAnswer = correctAnswer;
+  }
+
+  public String[] getIncorrectAnswer() {
+    return incorrectAnswer;
+  }
+
+  public void setIncorrectAnswer(String[] incorrectAnswer) {
+    this.incorrectAnswer = incorrectAnswer;
   }
 
   public enum Difficulty {

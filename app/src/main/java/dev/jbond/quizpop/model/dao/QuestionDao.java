@@ -16,7 +16,7 @@ public interface QuestionDao {
   @Query("SELECT * FROM Question WHERE  question_id = :questionId")
   LiveData<Question> getById(long questionId);
 
-  @Query("SELECT 1 FROM Question")
+  @Query("SELECT * FROM Question")
   LiveData<Question> getRandom();
 
   @Delete

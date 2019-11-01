@@ -10,10 +10,12 @@ import android.widget.Button;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.ViewModelProviders;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import dev.jbond.quizpop.MainViewModel;
 import dev.jbond.quizpop.R;
+import dev.jbond.quizpop.model.entity.Question;
 import dev.jbond.quizpop.service.GoogleSignInService;
 
 public class MainActivity extends AppCompatActivity {
@@ -51,12 +53,12 @@ public class MainActivity extends AppCompatActivity {
     randomButton = (Button) findViewById(R.id.randomButton);
     BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
     navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-    mainViewModel = new ViewModelProvider(this).get(MainViewModel.class);
+    MainViewModel viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
     randomButton.setOnClickListener(new OnClickListener() {
       @Override
       public void onClick(View view) {
-       // LiveData<Question> question = mainViewModel.getRandomQuestion();
-      //  mTextMessage.setText(question.getValue().getText());
+        LiveData<Question> question = mainViewModel.getRandomQuestion();
+        mTextMessage.setText(question.getValue().getText());
       }
     });
 

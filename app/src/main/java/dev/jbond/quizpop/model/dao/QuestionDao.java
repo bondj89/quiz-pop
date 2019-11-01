@@ -1,5 +1,6 @@
 package dev.jbond.quizpop.model.dao;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -13,7 +14,10 @@ public interface QuestionDao {
   long insert(Question question);
 
   @Query("SELECT * FROM Question WHERE  question_id = :questionId")
-  Question getById(long questionId);
+  LiveData<Question> getById(long questionId);
+
+  @Query("SELECT 1 FROM Question")
+  LiveData<Question> getRandom();
 
   @Delete
   int delete(Question... questions);

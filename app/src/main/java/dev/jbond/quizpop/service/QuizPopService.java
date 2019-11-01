@@ -2,7 +2,6 @@ package dev.jbond.quizpop.service;
 
 // TODO  See BlackjackV2 commits oct 21-22
 
-import dev.jbond.quizpop.BuildConfig;
 import dev.jbond.quizpop.model.entity.Question;
 import io.reactivex.Single;
 import okhttp3.OkHttpClient;
@@ -12,21 +11,20 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
-import retrofit2.http.Query;
 
-public interface OpenTriviaService {
+public interface QuizPopService {
 
   @GET("api.php?amount=1")
   Single<Question> randomQuestion();
 
 
-  static OpenTriviaService getInstance() {
+  static QuizPopService getInstance() {
     return InstanceHolder.INSTANCE;
   }
 
   class InstanceHolder {
 
-    private static final OpenTriviaService INSTANCE;
+    private static final QuizPopService INSTANCE;
     private static final String Base_URL = "https://opentdb.com/";
 
 
@@ -42,7 +40,7 @@ public interface OpenTriviaService {
           .baseUrl(Base_URL)
           .client(client)
           .build();
-      INSTANCE = retrofit.create(OpenTriviaService.class);
+      INSTANCE = retrofit.create(QuizPopService.class);
 
     }
   }

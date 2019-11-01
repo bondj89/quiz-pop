@@ -3,17 +3,24 @@ package dev.jbond.quizpop.controller;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
-import androidx.annotation.NonNull;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import androidx.appcompat.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.TextView;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import dev.jbond.quizpop.MainViewModel;
 import dev.jbond.quizpop.R;
 import dev.jbond.quizpop.service.GoogleSignInService;
 
 public class MainActivity extends AppCompatActivity {
 
   private TextView mTextMessage;
+  private MainViewModel mainViewModel;
+  private Button randomButton;
 
   private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
       = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -41,8 +48,18 @@ public class MainActivity extends AppCompatActivity {
     setContentView(R.layout.activity_main);
 
     mTextMessage = (TextView) findViewById(R.id.message);
+    randomButton = (Button) findViewById(R.id.randomButton);
     BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
     navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+    mainViewModel = new ViewModelProvider(this).get(MainViewModel.class);
+    randomButton.setOnClickListener(new OnClickListener() {
+      @Override
+      public void onClick(View view) {
+       // LiveData<Question> question = mainViewModel.getRandomQuestion();
+      //  mTextMessage.setText(question.getValue().getText());
+      }
+    });
+
   }
   @Override
   public boolean onCreateOptionsMenu(Menu menu) {

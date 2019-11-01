@@ -18,16 +18,18 @@ public class Question {
   private String type;
 
   @NonNull
+  @ColumnInfo(name = "difficulty")
   private Difficulty difficulty;
 
-  @ColumnInfo(name = "question_text")
+  @ColumnInfo(name = "question")
   @NonNull
   private String text;
 
+  @ColumnInfo(name = "correct_answer")
   private Boolean correct;
 
   private String correctAnswer;
-  private String[] incorrectAnswer;
+  // private List<String> incorrectAnswer; // write type convertor
 
   public long getId() {
     return id;
@@ -87,13 +89,13 @@ public class Question {
     this.correctAnswer = correctAnswer;
   }
 
-  public String[] getIncorrectAnswer() {
-    return incorrectAnswer;
-  }
+//  public List<String> getIncorrectAnswer() {
+//    return incorrectAnswer;
+//  }
 
-  public void setIncorrectAnswer(String[] incorrectAnswer) {
-    this.incorrectAnswer = incorrectAnswer;
-  }
+//  public void setIncorrectAnswer(List<String> incorrectAnswer) {
+//    this.incorrectAnswer = incorrectAnswer;
+//  }
 
   public enum Difficulty {
 

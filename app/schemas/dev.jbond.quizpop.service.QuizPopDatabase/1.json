@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "4431eb59b97d25add67a91d27f74d17b",
+    "identityHash": "342b69901adcd988044dcf4dbee8f8ba",
     "entities": [
       {
         "tableName": "User",
@@ -40,7 +40,7 @@
             "columnNames": [
               "oauth_key"
             ],
-            "createSql": "CREATE UNIQUE INDEX `index_User_oauth_key` ON `${TABLE_NAME}` (`oauth_key`)"
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_User_oauth_key` ON `${TABLE_NAME}` (`oauth_key`)"
           },
           {
             "name": "index_User_high_score",
@@ -48,7 +48,7 @@
             "columnNames": [
               "high_score"
             ],
-            "createSql": "CREATE  INDEX `index_User_high_score` ON `${TABLE_NAME}` (`high_score`)"
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_User_high_score` ON `${TABLE_NAME}` (`high_score`)"
           }
         ],
         "foreignKeys": []
@@ -95,7 +95,7 @@
             "columnNames": [
               "question_id"
             ],
-            "createSql": "CREATE  INDEX `index_Answer_question_id` ON `${TABLE_NAME}` (`question_id`)"
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_Answer_question_id` ON `${TABLE_NAME}` (`question_id`)"
           }
         ],
         "foreignKeys": [
@@ -154,7 +154,7 @@
             "columnNames": [
               "score"
             ],
-            "createSql": "CREATE  INDEX `index_Game_score` ON `${TABLE_NAME}` (`score`)"
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_Game_score` ON `${TABLE_NAME}` (`score`)"
           }
         ],
         "foreignKeys": [
@@ -173,7 +173,7 @@
       },
       {
         "tableName": "Question",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`question_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `category` TEXT, `type` TEXT, `difficulty` TEXT NOT NULL, `question_text` TEXT NOT NULL, `correct` INTEGER)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`question_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `category` TEXT, `type` TEXT, `difficulty` TEXT NOT NULL, `question` TEXT NOT NULL, `correct_answer` INTEGER, `correctAnswer` TEXT)",
         "fields": [
           {
             "fieldPath": "id",
@@ -201,14 +201,20 @@
           },
           {
             "fieldPath": "text",
-            "columnName": "question_text",
+            "columnName": "question",
             "affinity": "TEXT",
             "notNull": true
           },
           {
-            "fieldPath": "correct",
-            "columnName": "correct",
+            "fieldPath": "correct_answer",
+            "columnName": "correct_answer",
             "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "correctAnswer",
+            "columnName": "correctAnswer",
+            "affinity": "TEXT",
             "notNull": false
           }
         ],
@@ -225,7 +231,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '4431eb59b97d25add67a91d27f74d17b')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '342b69901adcd988044dcf4dbee8f8ba')"
     ]
   }
 }

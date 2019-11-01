@@ -52,7 +52,6 @@ public abstract class QuizPopDatabase extends RoomDatabase {
       INSTANCE =
           Room.databaseBuilder(applicationContext, QuizPopDatabase.class, "quiz_pop_db").build();
     }
-
   }
 
   public static class Converters {

@@ -12,9 +12,12 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class MainViewModel extends AndroidViewModel {
-private LiveData<Question> randomQuestion;
-private ExecutorService executor;
-private QuizPopDatabase database;
+
+  private static final int DEFAULT_NUMBER_OF_QUESTIONS = 25;
+
+  private LiveData<Question> randomQuestion;
+  private ExecutorService executor;
+  private QuizPopDatabase database;
 
   public MainViewModel(@NonNull Application application) {
     super(application);
@@ -25,7 +28,7 @@ private QuizPopDatabase database;
   }
 
   public void createRandomQuestion() {
-    QuizPopService.getInstance().randomQuestion()
+    QuizPopService.getInstance().randomQuestion(DEFAULT_NUMBER_OF_QUESTIONS)
         .subscribeOn(Schedulers.from(executor))
         .subscribe((question -> {
           database.getQuestionDao().insert(question);

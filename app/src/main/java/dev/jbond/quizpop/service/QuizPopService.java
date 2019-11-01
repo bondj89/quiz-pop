@@ -2,6 +2,7 @@ package dev.jbond.quizpop.service;
 
 // TODO  See BlackjackV2 commits oct 21-22
 
+import dev.jbond.quizpop.BuildConfig;
 import dev.jbond.quizpop.model.entity.Question;
 import io.reactivex.Single;
 import okhttp3.OkHttpClient;
@@ -11,11 +12,12 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
+import retrofit2.http.Query;
 
 public interface QuizPopService {
 
   @GET("api.php?amount=1")
-  Single<Question> randomQuestion();
+  Single<Question> randomQuestion(@Query("amount") int count);
 
 
   static QuizPopService getInstance() {
@@ -37,7 +39,7 @@ public interface QuizPopService {
       Retrofit retrofit = new Retrofit.Builder()
           .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
           .addConverterFactory(GsonConverterFactory.create())
-          .baseUrl(Base_URL)
+          .baseUrl(BuildConfig.Base_URL)
           .client(client)
           .build();
       INSTANCE = retrofit.create(QuizPopService.class);

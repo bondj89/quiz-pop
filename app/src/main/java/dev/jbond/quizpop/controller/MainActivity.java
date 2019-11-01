@@ -2,6 +2,7 @@ package dev.jbond.quizpop.controller;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import dev.jbond.quizpop.MainViewModel;
 import dev.jbond.quizpop.R;
@@ -20,9 +22,17 @@ import dev.jbond.quizpop.service.GoogleSignInService;
 
 public class MainActivity extends AppCompatActivity {
 
+  private ViewPager viewPager;
+
   private TextView mTextMessage;
   private MainViewModel mainViewModel;
   private Button randomButton;
+
+  private String url = "https://opentdb.com/api.php?amount=20&type=boolean";
+  private Handler handler = new Handler();
+  private int delay = 5000;
+  private int page = 0;
+
 
   private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
       = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -43,11 +53,11 @@ public class MainActivity extends AppCompatActivity {
       return false;
     }
   };
-
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
+    viewPager = findViewById(R.id.view_pager);
 
     mTextMessage = (TextView) findViewById(R.id.message);
     randomButton = (Button) findViewById(R.id.randomButton);
@@ -63,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
     });
 
   }
+
   @Override
   public boolean onCreateOptionsMenu(Menu menu) {
     super.onCreateOptionsMenu(menu);

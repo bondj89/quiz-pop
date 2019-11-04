@@ -27,7 +27,6 @@ public interface QuizPopService {
   class InstanceHolder {
 
     private static final QuizPopService INSTANCE;
-    private static final String Base_URL = "https://opentdb.com/";
 
 
     static {

@@ -58,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
     viewPager = findViewById(R.id.view_pager);
-
     mTextMessage = (TextView) findViewById(R.id.message);
     randomButton = (Button) findViewById(R.id.randomButton);
     BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);

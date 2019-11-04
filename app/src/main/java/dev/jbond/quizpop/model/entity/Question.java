@@ -29,7 +29,7 @@ public class Question {
   private Boolean correct;
 
   private String correctAnswer;
-  // private List<String> incorrectAnswer; // write type convertor
+  // private List<String> incorrectAnswer; // write type converter
 
   public long getId() {
     return id;

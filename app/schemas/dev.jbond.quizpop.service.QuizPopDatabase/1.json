@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "342b69901adcd988044dcf4dbee8f8ba",
+    "identityHash": "32812579b74854893f29930aa94cd43c",
     "entities": [
       {
         "tableName": "User",
@@ -173,7 +173,7 @@
       },
       {
         "tableName": "Question",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`question_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `category` TEXT, `type` TEXT, `difficulty` TEXT NOT NULL, `question` TEXT NOT NULL, `correct_answer` INTEGER, `correctAnswer` TEXT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`question_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `category` TEXT, `type` TEXT, `difficulty` TEXT NOT NULL, `question` TEXT NOT NULL, `correct` INTEGER)",
         "fields": [
           {
             "fieldPath": "id",
@@ -206,15 +206,9 @@
             "notNull": true
           },
           {
-            "fieldPath": "correct_answer",
-            "columnName": "correct_answer",
+            "fieldPath": "correct",
+            "columnName": "correct",
             "affinity": "INTEGER",
-            "notNull": false
-          },
-          {
-            "fieldPath": "correctAnswer",
-            "columnName": "correctAnswer",
-            "affinity": "TEXT",
             "notNull": false
           }
         ],
@@ -231,7 +225,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '342b69901adcd988044dcf4dbee8f8ba')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '32812579b74854893f29930aa94cd43c')"
     ]
   }
 }

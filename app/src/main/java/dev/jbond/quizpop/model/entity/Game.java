@@ -41,10 +41,6 @@ public class Game {
     return difficulty;
   }
 
-  public void setQuestionId(Long difficultyId) {
-    this.difficulty = difficulty;
-  }
-
   public Long getUserId() {
     return userId;
   }

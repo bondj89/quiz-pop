@@ -4,7 +4,10 @@ package dev.jbond.quizpop.model.entity;
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 @Entity
 public class Question {
@@ -13,23 +16,33 @@ public class Question {
   @ColumnInfo(name = "question_id")
   private long id;
 
+  @Expose
   private String category;
 
-  private String type;
+  @Expose
+  private Type type;
 
+  @Expose
   @NonNull
   @ColumnInfo(name = "difficulty")
   private Difficulty difficulty;
 
+  @Expose
   @ColumnInfo(name = "question")
   @NonNull
   private String text;
 
-  @ColumnInfo(name = "correct_answer")
   private Boolean correct;
 
-  private String correctAnswer;
-  // private List<String> incorrectAnswer; // write type converter
+  @Expose
+  @Ignore
+  @SerializedName("correct_answer")
+  private String tempCorrectAnswer;
+
+  @Expose
+  @Ignore
+  @SerializedName("incorrect_answer")
+  private String[] tempIncorrectAnswers;
 
   public long getId() {
     return id;
@@ -47,11 +60,11 @@ public class Question {
     this.category = category;
   }
 
-  public String getType() {
+  public Type getType() {
     return type;
   }
 
-  public void setType(String type) {
+  public void setType(Type type) {
     this.type = type;
   }
 
@@ -60,7 +73,7 @@ public class Question {
     return difficulty;
   }
 
-  public void setDifficulty(@NonNull Difficulty difficulty) {
+  public void setDifficulty(Difficulty difficulty) {
     this.difficulty = difficulty;
   }
 
@@ -81,29 +94,31 @@ public class Question {
     this.correct = correct;
   }
 
-  public String getCorrectAnswer() {
-    return correctAnswer;
+  public String getTempCorrectAnswer() {
+    return tempCorrectAnswer;
   }
 
-  public void setCorrectAnswer(String correctAnswer) {
-    this.correctAnswer = correctAnswer;
+  public void setTempCorrectAnswer(String tempCorrectAnswer) {
+    this.tempCorrectAnswer = tempCorrectAnswer;
   }
 
-//  public List<String> getIncorrectAnswer() {
-//    return incorrectAnswer;
-//  }
+  public String[] getTempIncorrectAnswers() {
+    return tempIncorrectAnswers;
+  }
 
-//  public void setIncorrectAnswer(List<String> incorrectAnswer) {
-//    this.incorrectAnswer = incorrectAnswer;
-//  }
+  public void setTempIncorrectAnswers(String[] tempIncorrectAnswers) {
+    this.tempIncorrectAnswers = tempIncorrectAnswers;
+  }
 
   public enum Difficulty {
-
     EASY,
     MEDIUM,
     HARD
   }
 
-
+  public enum Type {
+    MULTIPLE,
+    BOOLEAN
+  }
 
 }

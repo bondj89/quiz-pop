@@ -14,6 +14,7 @@ import dev.jbond.quizpop.model.entity.Answer;
 import dev.jbond.quizpop.model.entity.Game;
 import dev.jbond.quizpop.model.entity.Question;
 import dev.jbond.quizpop.model.entity.Question.Difficulty;
+import dev.jbond.quizpop.model.entity.Question.Type;
 import dev.jbond.quizpop.model.entity.User;
 
 @Database(
@@ -23,7 +24,7 @@ import dev.jbond.quizpop.model.entity.User;
 @TypeConverters(QuizPopDatabase.Converters.class)
 public abstract class QuizPopDatabase extends RoomDatabase {
 
-  protected QuizPopDatabase() {
+  QuizPopDatabase() {
   }
 
   private static Application applicationContext;
@@ -63,7 +64,12 @@ public abstract class QuizPopDatabase extends RoomDatabase {
 
     @TypeConverter
     public Difficulty stringToDifficulty(String value) {
-      return (value != null) ? Difficulty.valueOf(value) : null;
+      return (value != null) ? Difficulty.valueOf(value.toUpperCase()) : null;
+    }
+
+    @TypeConverter
+    public Type stringToType(String value) {
+      return (value != null) ? Type.valueOf(value.toUpperCase()) : null;
     }
 
   }

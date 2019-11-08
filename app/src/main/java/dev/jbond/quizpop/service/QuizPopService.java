@@ -1,7 +1,5 @@
 package dev.jbond.quizpop.service;
 
-// TODO  See BlackjackV2 commits oct 21-22
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import dev.jbond.quizpop.BuildConfig;
@@ -29,7 +27,6 @@ public interface QuizPopService {
   class InstanceHolder {
 
     private static final QuizPopService INSTANCE;
-
 
     static {
       HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();

@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "32812579b74854893f29930aa94cd43c",
+    "identityHash": "cd07572dc996cd5d53a78b287465f85a",
     "entities": [
       {
         "tableName": "User",
@@ -149,6 +149,14 @@
         },
         "indices": [
           {
+            "name": "index_Game_user_id",
+            "unique": false,
+            "columnNames": [
+              "user_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_Game_user_id` ON `${TABLE_NAME}` (`user_id`)"
+          },
+          {
             "name": "index_Game_score",
             "unique": false,
             "columnNames": [
@@ -225,7 +233,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '32812579b74854893f29930aa94cd43c')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'cd07572dc996cd5d53a78b287465f85a')"
     ]
   }
 }

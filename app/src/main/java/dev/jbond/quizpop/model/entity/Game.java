@@ -23,7 +23,7 @@ public class Game {
 
   private Difficulty difficulty;
 
-  @ColumnInfo(name = "user_id")
+  @ColumnInfo(name = "user_id", index = true)
   private long userId;
 
   @ColumnInfo(index = true,name = "score")

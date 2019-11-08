@@ -20,19 +20,20 @@ public class Question {
   private String category;
 
   @Expose
-  private Type type;
+  private String type;
 
   @Expose
   @NonNull
   @ColumnInfo(name = "difficulty")
-  private Difficulty difficulty;
+  @SerializedName("difficulty")
+  private String difficulty;
 
   @Expose
+  @SerializedName("question")
   @ColumnInfo(name = "question")
   @NonNull
   private String text;
 
-  private Boolean correct;
 
   @Expose
   @Ignore
@@ -41,7 +42,7 @@ public class Question {
 
   @Expose
   @Ignore
-  @SerializedName("incorrect_answer")
+  @SerializedName("incorrect_answers")
   private String[] tempIncorrectAnswers;
 
   public long getId() {
@@ -60,20 +61,20 @@ public class Question {
     this.category = category;
   }
 
-  public Type getType() {
+  public String getType() {
     return type;
   }
 
-  public void setType(Type type) {
+  public void setType(String type) {
     this.type = type;
   }
 
   @NonNull
-  public Difficulty getDifficulty() {
+  public String getDifficulty() {
     return difficulty;
   }
 
-  public void setDifficulty(Difficulty difficulty) {
+  public void setDifficulty(String difficulty) {
     this.difficulty = difficulty;
   }
 
@@ -86,13 +87,6 @@ public class Question {
     this.text = text;
   }
 
-  public Boolean getCorrect() {
-    return correct;
-  }
-
-  public void setCorrect(Boolean correct) {
-    this.correct = correct;
-  }
 
   public String getTempCorrectAnswer() {
     return tempCorrectAnswer;

@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "32812579b74854893f29930aa94cd43c",
+    "identityHash": "9fb4b88d50d89e5c907ec7344983c6fc",
     "entities": [
       {
         "tableName": "User",
@@ -149,6 +149,14 @@
         },
         "indices": [
           {
+            "name": "index_Game_user_id",
+            "unique": false,
+            "columnNames": [
+              "user_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_Game_user_id` ON `${TABLE_NAME}` (`user_id`)"
+          },
+          {
             "name": "index_Game_score",
             "unique": false,
             "columnNames": [
@@ -173,7 +181,7 @@
       },
       {
         "tableName": "Question",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`question_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `category` TEXT, `type` TEXT, `difficulty` TEXT NOT NULL, `question` TEXT NOT NULL, `correct` INTEGER)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`question_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `category` TEXT, `type` TEXT, `difficulty` TEXT NOT NULL, `question` TEXT NOT NULL)",
         "fields": [
           {
             "fieldPath": "id",
@@ -204,12 +212,6 @@
             "columnName": "question",
             "affinity": "TEXT",
             "notNull": true
-          },
-          {
-            "fieldPath": "correct",
-            "columnName": "correct",
-            "affinity": "INTEGER",
-            "notNull": false
           }
         ],
         "primaryKey": {
@@ -225,7 +227,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '32812579b74854893f29930aa94cd43c')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '9fb4b88d50d89e5c907ec7344983c6fc')"
     ]
   }
 }

@@ -11,11 +11,13 @@ import android.widget.Button;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import dev.jbond.quizpop.MainViewModel;
+import dev.jbond.quizpop.QuestionFragment;
 import dev.jbond.quizpop.R;
 import dev.jbond.quizpop.model.entity.Question;
 import dev.jbond.quizpop.service.GoogleSignInService;
@@ -25,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
   private ViewPager viewPager;
 
   private TextView mTextMessage;
-  private MainViewModel mainViewModel;
+  //private MainViewModel mainViewModel;
   private Button randomButton;
 
   private String url = "https://opentdb.com/api.php?amount=20&type=boolean";
@@ -63,10 +65,16 @@ public class MainActivity extends AppCompatActivity {
     BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
     navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     MainViewModel viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
+
+    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+    transaction.add(R.id.fragment_container, new QuestionFragment(), Question.class.getSimpleName());
+    transaction.addToBackStack(Question.class.getSimpleName()); // INFO: Use this for back button -- adds fragment to stack so that it can be popped off ie back button
+    transaction.commit();
+
     randomButton.setOnClickListener(new OnClickListener() {
       @Override
       public void onClick(View view) {
-        LiveData<Question> question = mainViewModel.getRandomQuestion();
+        LiveData<Question> question = viewModel.getRandomQuestion();
         mTextMessage.setText(question.getValue().getText());
       }
     });

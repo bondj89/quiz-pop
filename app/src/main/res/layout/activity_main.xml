@@ -28,6 +28,11 @@
     app:layout_constraintRight_toLeftOf="parent"
     app:layout_constraintTop_toBottomOf="@id/message"/>
 
+  <include
+    layout="@layout/content_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"/>
+
   <com.google.android.material.bottomnavigation.BottomNavigationView
     android:id="@+id/navigation"
     android:layout_width="0dp"

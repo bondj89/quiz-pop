@@ -4,7 +4,6 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import dev.jbond.quizpop.model.entity.Question;
 import java.util.List;
-
 public class QuestionResponse {
 
   @Expose

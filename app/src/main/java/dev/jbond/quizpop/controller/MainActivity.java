@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
   private ViewPager viewPager;
 
   private TextView mTextMessage;
-  private MainViewModel mainViewModel;
+  //private MainViewModel mainViewModel;
   private Button randomButton;
 
   private String url = "https://opentdb.com/api.php?amount=20&type=boolean";
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
     randomButton.setOnClickListener(new OnClickListener() {
       @Override
       public void onClick(View view) {
-        LiveData<Question> question = mainViewModel.getRandomQuestion();
+        LiveData<Question> question = viewModel.getRandomQuestion();
         mTextMessage.setText(question.getValue().getText());
       }
     });

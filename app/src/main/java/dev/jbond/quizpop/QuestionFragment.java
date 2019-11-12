@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment;
 
 public class QuestionFragment extends Fragment {
 
-  TextView questionText;
+  private TextView questionText;
 
   @Nullable
   @Override
@@ -20,7 +20,7 @@ public class QuestionFragment extends Fragment {
     View view = inflater.inflate(R.layout.question_fragment, container,false);
     questionText = view.findViewById(R.id.question_text);
 
-    questionText.setText("TEEEST");
+    questionText.setText("TEST");
 
     return view;
   }

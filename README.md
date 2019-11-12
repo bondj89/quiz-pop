@@ -28,7 +28,7 @@ related activities, flexing their brain and competing with friends.
 
 + [Data Definition Language (DDL) for data model](docs/ddl.md)
 
-+ [QuizPop Database](https://github.com/bondj89/quiz-pop/blob/master/app/src/main/java/dev/jbond/quizpop/service/QuizPopDatabase.java)
++ [Quiz Pop Database](https://github.com/bondj89/quiz-pop/blob/master/app/src/main/java/dev/jbond/quizpop/service/QuizPopDatabase.java)
 
 ## Tools 
 + [Lucid Chart](https://www.lucidchart.com/pages/)

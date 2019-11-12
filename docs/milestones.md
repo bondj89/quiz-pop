@@ -49,7 +49,7 @@
     + [ ] Build Instructions 
     + [ ] Basic User Instructions 
 + Implementation Components 
-    + [ ] Multiple activities and/or multiple fragments, with rational stack management 
+    + [ ]    Multiple activities and/or multiple fragments, with rational stack management 
     + [ ] Shared preferences for maintaining application configuration/profile data
     + [ ] Use of the SQLite database, either directly via the SQLite library or via the Room ORM persistence library, for the app’s data store
     + [ ] Dynamic, database-driven UI container components (e.g. ListView, RecyclerView, ViewPager, GridView)

@@ -7,7 +7,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
@@ -15,7 +14,6 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import dev.jbond.quizpop.MainViewModel;
-import dev.jbond.quizpop.QuestionFragment;
 import dev.jbond.quizpop.R;
 import dev.jbond.quizpop.model.entity.Question;
 import dev.jbond.quizpop.service.GoogleSignInService;
@@ -66,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
     viewModel.getRandomQuestion().observe(this, (question) -> {
       if (question != null) {
         mTextMessage.setText(question.getText());
-        Toast.makeText(this, question.getText(), Toast.LENGTH_LONG).show();
       }
     });
 

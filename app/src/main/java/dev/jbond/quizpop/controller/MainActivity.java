@@ -5,14 +5,12 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -65,18 +63,20 @@ public class MainActivity extends AppCompatActivity {
     BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
     navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     MainViewModel viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
+    viewModel.getRandomQuestion().observe(this, (question) -> {
+      if (question != null) {
+        mTextMessage.setText(question.getText());
+        Toast.makeText(this, question.getText(), Toast.LENGTH_LONG).show();
+      }
+    });
 
     FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
     transaction.add(R.id.fragment_container, new QuestionFragment(), Question.class.getSimpleName());
     transaction.addToBackStack(Question.class.getSimpleName()); // INFO: Use this for back button -- adds fragment to stack so that it can be popped off ie back button
     transaction.commit();
 
-    randomButton.setOnClickListener(new OnClickListener() {
-      @Override
-      public void onClick(View view) {
-        LiveData<Question> question = viewModel.getRandomQuestion();
-        mTextMessage.setText(question.getValue().getText());
-      }
+    randomButton.setOnClickListener(view -> {
+      viewModel.refreshRandom();
     });
 
   }

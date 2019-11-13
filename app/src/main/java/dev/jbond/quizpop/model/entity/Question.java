@@ -20,13 +20,13 @@ public class Question {
   private String category;
 
   @Expose
-  private String type;
+  private Type type;
 
   @Expose
   @NonNull
   @ColumnInfo(name = "difficulty")
   @SerializedName("difficulty")
-  private String difficulty;
+  private Difficulty difficulty;
 
   @Expose
   @SerializedName("question")
@@ -34,6 +34,8 @@ public class Question {
   @NonNull
   private String text;
 
+
+  private Boolean correct;
 
   @Expose
   @Ignore
@@ -61,20 +63,20 @@ public class Question {
     this.category = category;
   }
 
-  public String getType() {
+  public Type getType() {
     return type;
   }
 
-  public void setType(String type) {
+  public void setType(Type type) {
     this.type = type;
   }
 
   @NonNull
-  public String getDifficulty() {
+  public Difficulty getDifficulty() {
     return difficulty;
   }
 
-  public void setDifficulty(String difficulty) {
+  public void setDifficulty(Difficulty difficulty) {
     this.difficulty = difficulty;
   }
 
@@ -87,6 +89,14 @@ public class Question {
     this.text = text;
   }
 
+
+  public Boolean getCorrect() {
+    return correct;
+  }
+
+  public void setCorrect(Boolean correct) {
+    this.correct = correct;
+  }
 
   public String getTempCorrectAnswer() {
     return tempCorrectAnswer;
@@ -105,13 +115,18 @@ public class Question {
   }
 
   public enum Difficulty {
+    @SerializedName("easy")
     EASY,
+    @SerializedName("medium")
     MEDIUM,
+    @SerializedName("hard")
     HARD
   }
 
   public enum Type {
+    @SerializedName("multiple")
     MULTIPLE,
+    @SerializedName("boolean")
     BOOLEAN
   }
 

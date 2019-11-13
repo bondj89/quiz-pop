@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "9fb4b88d50d89e5c907ec7344983c6fc",
+    "identityHash": "cd07572dc996cd5d53a78b287465f85a",
     "entities": [
       {
         "tableName": "User",
@@ -181,7 +181,7 @@
       },
       {
         "tableName": "Question",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`question_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `category` TEXT, `type` TEXT, `difficulty` TEXT NOT NULL, `question` TEXT NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`question_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `category` TEXT, `type` TEXT, `difficulty` TEXT NOT NULL, `question` TEXT NOT NULL, `correct` INTEGER)",
         "fields": [
           {
             "fieldPath": "id",
@@ -212,6 +212,12 @@
             "columnName": "question",
             "affinity": "TEXT",
             "notNull": true
+          },
+          {
+            "fieldPath": "correct",
+            "columnName": "correct",
+            "affinity": "INTEGER",
+            "notNull": false
           }
         ],
         "primaryKey": {
@@ -227,7 +233,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '9fb4b88d50d89e5c907ec7344983c6fc')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'cd07572dc996cd5d53a78b287465f85a')"
     ]
   }
 }

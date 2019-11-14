@@ -10,6 +10,6 @@ person who desires the new capability, usually a user or customer of the system.
 
 + As a trivia fanatic, I want to choose a topic, so that I can test my knowledge.   
 
-+ As a Google customer, I would like to sign in with my Gmail email, so that I can track my score. 
++ As a fan of Google, I would like to sign in with my Gmail account, so that I can sign in faster. 
 
 ```

@@ -77,34 +77,42 @@ public class MainViewModel extends AndroidViewModel {
     QuizPopService.getInstance().randomQuestion(10)
         .subscribeOn(Schedulers.from(executor))
         .subscribe((response) -> {
-          for (Question question : response.getQuestions()) {
-            if (question.getType() == Type.BOOLEAN) {
-              question.setCorrect(Boolean.valueOf(question.getTempCorrectAnswer()));
-              database.getQuestionDao().insert(question);
-            } else {
-              List<Answer> answers = new LinkedList<>();
-              Answer answer = new Answer();
-              answer.setText(question.getTempCorrectAnswer());
-              answer.setCorrect(true);
-              answers.add(answer);
-              for (String s : question.getTempIncorrectAnswers()) {
-                answer = new Answer();
-                answer.setText(s);
-                answer.setCorrect(false);
+          database.runInTransaction(() -> {
+            for (Question question : response.getQuestions()) {
+              if (question.getType() == Type.BOOLEAN) {
+                question.setCorrect(Boolean.valueOf(question.getTempCorrectAnswer()));
+                database.getQuestionDao().insert(question);
+              } else {
+                List<Answer> answers = new LinkedList<>();
+                Answer answer = new Answer();
+                answer.setText(question.getTempCorrectAnswer());
+                answer.setCorrect(true);
                 answers.add(answer);
-              }
-              long id = database.getQuestionDao().insert(question);
-              if (id > 0) {
-                for (Answer a : answers) {
-                  a.setQuestionId(id);
+                for (String s : question.getTempIncorrectAnswers()) {
+                  answer = new Answer();
+                  answer.setText(s);
+                  answer.setCorrect(false);
+                  answers.add(answer);
                 }
-                database.getAnswerDao().insert(answers);
-              //  refreshRandom.postValue(!refreshRandom.getValue());
+                long id = database.getQuestionDao().insert(question);
+                if (id > 0) {
+                  for (Answer a : answers) {
+                    a.setQuestionId(id);
+                  }
+                  database.getAnswerDao().insert(answers);
+                  //  refreshRandom.postValue(!refreshRandom.getValue());
+                }
               }
             }
-          }
+          });
         });
   }
+
+//  public boolean onOptionMulti(TextView selectedOptionText) {
+//    String option = selectedOptionText.getText().toString();
+//    if ()
+//
+//  }
 
   public int getRandQuestionListSize(){
     return randQuestionList.getValue().size();

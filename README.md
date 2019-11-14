@@ -7,8 +7,7 @@ questions of general trivia knowledge.
 Developed in Android, QuizPop is an all you can play trivia game 
 that allows players to answer questions from their favorite topics. 
 Questions are in the format of multiple choice and true or false. 
-Players can choose the difficulty level and compete against friends 
-by signing in through their Google account. 
+
 
 ## Intended Users 
 Anyone that loves to play trivia from the palm of their hands. 
@@ -28,7 +27,6 @@ related activities, flexing their brain and competing with friends.
 
 + [Data Definition Language (DDL) for data model](docs/ddl.md)
 
-+ [Quiz Pop Database](https://github.com/bondj89/quiz-pop/blob/master/app/src/main/java/dev/jbond/quizpop/service/QuizPopDatabase.java)
 
 ## Tools 
 + [Lucid Chart](https://www.lucidchart.com/pages/)

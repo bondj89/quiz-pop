@@ -13,12 +13,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import dev.jbond.quizpop.MainViewModel;
 import dev.jbond.quizpop.R;
 import dev.jbond.quizpop.model.entity.Answer;
+import dev.jbond.quizpop.model.entity.Question.Type;
 import dev.jbond.quizpop.model.pojo.QuestionWithAnswers;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class QuestionFragment extends Fragment {
+public class QuestionFragment extends Fragment implements AnswerAdapter.OnClickListener {
 
   View view;
   RecyclerView recyclerView;
@@ -70,9 +71,23 @@ public class QuestionFragment extends Fragment {
     //recyclerView.setHasFixedSize(true);
     // use a linear layout manager
     // specify an adapter (see also next example)
-    adapter = new AnswerAdapter(answers, getContext());
+    if (question.getType() == Type.BOOLEAN) {
+      Answer answer = new Answer();
+      answer.setText("True");
+      answer.setCorrect(question.getCorrect());
+      answers.add(answer);
+      answer = new Answer();
+      answer.setText("False");
+      answer.setCorrect(!question.getCorrect());
+      answers.add(answer);
+    }
+    adapter = new AnswerAdapter(getContext(), this, answers);
     recyclerView.setAdapter(adapter);
   }
 
 
+  @Override
+  public void onClick(int position, Answer answer) {
+ // TODO: Look at answer.iscorrect to see if user answered correctly or not.
+  }
 }

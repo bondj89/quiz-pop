@@ -35,7 +35,6 @@ public class Question {
   @NonNull
   private String text;
 
-
   private Boolean correct;
 
   @Expose

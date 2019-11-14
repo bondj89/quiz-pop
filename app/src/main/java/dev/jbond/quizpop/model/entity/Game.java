@@ -16,6 +16,7 @@ import androidx.room.PrimaryKey;
     }
 )
 public class Game {
+
   @PrimaryKey(autoGenerate = true)
   @ColumnInfo(name = "game_id")
   private long id;
@@ -25,7 +26,7 @@ public class Game {
   @ColumnInfo(name = "user_id", index = true)
   private long userId;
 
-  @ColumnInfo(index = true,name = "score")
+  @ColumnInfo(index = true, name = "score")
   private int score;
 
   public long getId() {
@@ -34,10 +35,6 @@ public class Game {
 
   public void setId(long id) {
     this.id = id;
-  }
-
-  public String getDifficulty() {
-    return difficulty;
   }
 
   public Long getUserId() {
@@ -59,4 +56,9 @@ public class Game {
   public void setDifficulty(String difficulty) {
     this.difficulty = difficulty;
   }
+
+  public String getDifficulty() {
+    return difficulty;
+  }
+
 }

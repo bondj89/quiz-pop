@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
   private TextView mTextMessage;
   private Button randomButton;
 
-  private String url = "https://opentdb.com/api.php?amount=20";
+  private String url = "https://opentdb.com/api.php?amount=25";
   private Handler handler = new Handler();
   private int delay = 5000;
   private int page = 0;

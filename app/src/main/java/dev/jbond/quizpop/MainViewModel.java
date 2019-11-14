@@ -5,10 +5,10 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.Transformations;
 import dev.jbond.quizpop.model.entity.Answer;
 import dev.jbond.quizpop.model.entity.Question;
 import dev.jbond.quizpop.model.entity.Question.Type;
+import dev.jbond.quizpop.model.pojo.QuestionWithAnswers;
 import dev.jbond.quizpop.service.QuizPopDatabase;
 import dev.jbond.quizpop.service.QuizPopService;
 import io.reactivex.schedulers.Schedulers;
@@ -22,8 +22,8 @@ public class MainViewModel extends AndroidViewModel {
   private static final int DEFAULT_NUMBER_OF_QUESTIONS = 25;
 
   private LiveData<List<Question>> randQuestionList;
-  private LiveData<Question> randomQuestion;
-  private MutableLiveData<Boolean> refreshRandom = new MutableLiveData<>(false);
+//  private LiveData<QuestionWithAnswers> randomQuestion;
+//  private MutableLiveData<Boolean> refreshRandom = new MutableLiveData<>(false);
 
   private ExecutorService executor;
   private QuizPopDatabase database;
@@ -33,9 +33,9 @@ public class MainViewModel extends AndroidViewModel {
     randQuestionList = new MutableLiveData<>();
     database = QuizPopDatabase.getInstance();
     executor = Executors.newSingleThreadExecutor();
-    randomQuestion = database.getQuestionDao().getRandom();
-    randomQuestion = Transformations.switchMap(refreshRandom,
-        (ignoreBoolean) -> database.getQuestionDao().getRandom());
+//    randomQuestion = database.getQuestionDao().getRandom();
+//    randomQuestion = Transformations.switchMap(refreshRandom,
+//        (ignoreBoolean) -> database.getQuestionDao().getRandom());
     createRandomQuestion();
     getRandomQuestionFromDb();
   }
@@ -83,47 +83,55 @@ public class MainViewModel extends AndroidViewModel {
     return randQuestionList;
   }
 
-  public LiveData<Question> getRandomQuestion(){
+  public LiveData<QuestionWithAnswers> getRandomQuestion(){
 
-    return randomQuestion;
+    return database.getQuestionDao().getRandom();
 
   }
 
   public void refreshRandom() {
-    database.getQuestionDao().count()
-        .subscribeOn(Schedulers.io())
-        .subscribe((count) -> {
-          if (count > 0) {
-            refreshRandom.postValue(true);
-          } else {
-            QuizPopService.getInstance().randomQuestion(10)
-                .subscribeOn(Schedulers.from(executor))
-                .subscribe((response) -> {
-                  for (Question question : response.getQuestions()) {
-                    if (question.getType() == Type.BOOLEAN) {
-                      question.setCorrect(Boolean.valueOf(question.getTempCorrectAnswer()));
-                      database.getQuestionDao().insert(question);
-                    } else {
-                      List<Answer> answers = new LinkedList<>();
-                      Answer answer = new Answer();
-                      answer.setText(question.getTempCorrectAnswer());
-                      answer.setCorrect(true);
-                      answers.add(answer);
-                      for (String s : question.getTempIncorrectAnswers()) {
-                        answer = new Answer();
-                        answer.setText(s);
-                        answer.setCorrect(false);
-                        answers.add(answer);
-                      }
-                      long id = database.getQuestionDao().insert(question);
-                      for (Answer a : answers) {
-                        a.setQuestionId(id);
-                      }
-                      database.getAnswerDao().insert(answers);
-                      refreshRandom.postValue(!refreshRandom.getValue());
-                    }
-                  }
-                });
+//    refreshRandom.postValue(true);
+      loadBatch();
+//    database.getQuestionDao().count()
+//        .subscribeOn(Schedulers.io())
+//        .subscribe((count) -> {
+//          if (count > 0) {
+//            refreshRandom.postValue(true);
+//          } else {
+//            loadBatch();
+//          }
+//        });
+  }
+
+  private void loadBatch() {
+    QuizPopService.getInstance().randomQuestion(10)
+        .subscribeOn(Schedulers.from(executor))
+        .subscribe((response) -> {
+          for (Question question : response.getQuestions()) {
+            if (question.getType() == Type.BOOLEAN) {
+              question.setCorrect(Boolean.valueOf(question.getTempCorrectAnswer()));
+              database.getQuestionDao().insert(question);
+            } else {
+              List<Answer> answers = new LinkedList<>();
+              Answer answer = new Answer();
+              answer.setText(question.getTempCorrectAnswer());
+              answer.setCorrect(true);
+              answers.add(answer);
+              for (String s : question.getTempIncorrectAnswers()) {
+                answer = new Answer();
+                answer.setText(s);
+                answer.setCorrect(false);
+                answers.add(answer);
+              }
+              long id = database.getQuestionDao().insert(question);
+              if (id > 0) {
+                for (Answer a : answers) {
+                  a.setQuestionId(id);
+                }
+                database.getAnswerDao().insert(answers);
+              //  refreshRandom.postValue(!refreshRandom.getValue());
+              }
+            }
           }
         });
   }

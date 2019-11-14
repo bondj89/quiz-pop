@@ -3,19 +3,27 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
   android:id="@+id/question_fragment"
-  android:layout_width="0dp"
-  android:layout_height="0dp"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
   android:clickable="true"
   android:focusable="true">
 
-  <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+  <TextView
     android:id="@+id/question_text"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:text="@string/heeey"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintRight_toRightOf="parent"
+    android:paddingTop="40dp"
+    app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"/>
+
+  <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/recycler_view"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/question_text"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

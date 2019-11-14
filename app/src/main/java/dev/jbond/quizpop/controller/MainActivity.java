@@ -9,13 +9,11 @@ import android.widget.Button;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import dev.jbond.quizpop.MainViewModel;
 import dev.jbond.quizpop.R;
-import dev.jbond.quizpop.model.entity.Question;
 import dev.jbond.quizpop.service.GoogleSignInService;
 
 public class MainActivity extends AppCompatActivity {
@@ -54,23 +52,12 @@ public class MainActivity extends AppCompatActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
-    viewPager = findViewById(R.id.view_pager);
-    mTextMessage = findViewById(R.id.message);
+//    viewPager = findViewById(R.id.view_pager);
+//    mTextMessage = findViewById(R.id.message);
     randomButton = findViewById(R.id.randomButton);
-    BottomNavigationView navigation = findViewById(R.id.navigation);
-    navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+//    BottomNavigationView navigation = findViewById(R.id.navigation);
+//    navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     MainViewModel viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
-    viewModel.getRandomQuestion().observe(this, (question) -> {
-      if (question != null) {
-        mTextMessage.setText(question.getText());
-      }
-    });
-
-    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-    transaction.add(R.id.fragment_container, new QuestionFragment(), Question.class.getSimpleName());
-    transaction.addToBackStack(Question.class.getSimpleName()); // INFO: Use this for back button -- adds fragment to stack so that it can be popped off ie back button
-    transaction.commit();
-
     randomButton.setOnClickListener(view -> {
       viewModel.refreshRandom();
     });

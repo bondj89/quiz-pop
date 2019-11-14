@@ -12,16 +12,14 @@ import dev.jbond.quizpop.R;
 
 public class QuestionFragment extends Fragment {
 
-  private TextView questionText;
-
   @Nullable
   @Override
   public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
       @Nullable Bundle savedInstanceState) {
     View view = inflater.inflate(R.layout.question_fragment, container,false);
-    questionText = view.findViewById(R.id.question_text);
+    TextView questionText = view.findViewById(R.id.question_text);
 
-    questionText.setText("TEST");
+    questionText.setText("Quiz Pop");
 
     return view;
   }

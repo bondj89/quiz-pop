@@ -23,10 +23,9 @@ public class MainActivity extends AppCompatActivity {
   private ViewPager viewPager;
 
   private TextView mTextMessage;
-  //private MainViewModel mainViewModel;
   private Button randomButton;
 
-  private String url = "https://opentdb.com/api.php?amount=20&type=boolean";
+  private String url = "https://opentdb.com/api.php?amount=20";
   private Handler handler = new Handler();
   private int delay = 5000;
   private int page = 0;
@@ -56,9 +55,9 @@ public class MainActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
     viewPager = findViewById(R.id.view_pager);
-    mTextMessage = (TextView) findViewById(R.id.message);
-    randomButton = (Button) findViewById(R.id.randomButton);
-    BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+    mTextMessage = findViewById(R.id.message);
+    randomButton = findViewById(R.id.randomButton);
+    BottomNavigationView navigation = findViewById(R.id.navigation);
     navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     MainViewModel viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
     viewModel.getRandomQuestion().observe(this, (question) -> {

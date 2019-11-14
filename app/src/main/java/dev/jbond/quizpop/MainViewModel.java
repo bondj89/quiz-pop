@@ -96,7 +96,7 @@ public class MainViewModel extends AndroidViewModel {
           if (count > 0) {
             refreshRandom.postValue(true);
           } else {
-            QuizPopService.getInstance().randomQuestion(25)
+            QuizPopService.getInstance().randomQuestion(10)
                 .subscribeOn(Schedulers.from(executor))
                 .subscribe((response) -> {
                   for (Question question : response.getQuestions()) {

@@ -5,13 +5,14 @@
   android:id="@+id/question_fragment"
   android:layout_width="0dp"
   android:layout_height="0dp"
-  android:clickable="true">
+  android:clickable="true"
+  android:focusable="true">
 
   <androidx.appcompat.widget.AppCompatAutoCompleteTextView
     android:id="@+id/question_text"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="Heeey"
+    android:text="@string/heeey"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintLeft_toLeftOf="parent"
     app:layout_constraintRight_toRightOf="parent"

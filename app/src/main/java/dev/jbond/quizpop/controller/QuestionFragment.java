@@ -19,13 +19,34 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * The type Question fragment.
+ */
 public class QuestionFragment extends Fragment implements AnswerAdapter.OnClickListener {
 
+  /**
+   * The View.
+   */
   View view;
+  /**
+   * The Recycler view.
+   */
   RecyclerView recyclerView;
+  /**
+   * The Adapter.
+   */
   AnswerAdapter adapter;
+  /**
+   * The View model.
+   */
   MainViewModel viewModel;
+  /**
+   * The Question.
+   */
   QuestionWithAnswers question;
+  /**
+   * The Question text.
+   */
   TextView questionText;
 
   @Override
@@ -42,7 +63,6 @@ public class QuestionFragment extends Fragment implements AnswerAdapter.OnClickL
     view = inflater.inflate(R.layout.question_fragment, container, false);
     questionText = view.findViewById(R.id.question_text);
 
-
     return view;
   }
 
@@ -56,13 +76,13 @@ public class QuestionFragment extends Fragment implements AnswerAdapter.OnClickL
         setUpUI(question);
       }
     });
-
+    viewModel.newGame();
   }
 
   private void setUpUI(QuestionWithAnswers question) {
 
     questionText.setText(question.getText());
-  List<Answer> answers = new ArrayList<>(question.getAnswers());
+    List<Answer> answers = new ArrayList<>(question.getAnswers());
 
     Collections.shuffle(answers);
     recyclerView = view.findViewById(R.id.recycler_view);
@@ -88,6 +108,6 @@ public class QuestionFragment extends Fragment implements AnswerAdapter.OnClickL
 
   @Override
   public void onClick(int position, Answer answer) {
- // TODO: Look at answer.iscorrect to see if user answered correctly or not.
+    viewModel.recordResult(answer.isCorrect()); // Ask viewModel to increment accounts.
   }
 }

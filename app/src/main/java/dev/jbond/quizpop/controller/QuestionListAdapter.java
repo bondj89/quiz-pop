@@ -4,6 +4,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
+/**
+ * The type Question list adapter.
+ */
 public class QuestionListAdapter extends BaseAdapter {
 
   @Override

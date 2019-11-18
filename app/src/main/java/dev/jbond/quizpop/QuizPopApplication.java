@@ -5,6 +5,9 @@ import com.facebook.stetho.Stetho;
 import dev.jbond.quizpop.service.GoogleSignInService;
 import dev.jbond.quizpop.service.QuizPopDatabase;
 
+/**
+ * The type Quiz pop application.
+ */
 public class QuizPopApplication extends Application {
 
   @Override

@@ -16,6 +16,11 @@ import dev.jbond.quizpop.MainViewModel;
 import dev.jbond.quizpop.R;
 import dev.jbond.quizpop.service.GoogleSignInService;
 
+
+/**
+ * Main user interface for accessing a passphrase storage service, providing creation (including
+ * random generation using a diceware word list),
+ */
 public class MainActivity extends AppCompatActivity {
 
   private ViewPager viewPager;
@@ -27,6 +32,13 @@ public class MainActivity extends AppCompatActivity {
   private Handler handler = new Handler();
   private int delay = 5000;
   private int page = 0;
+
+  /**
+   * Initializes UI, sets up observers for backing ViewModel data, and sets up an observer for
+   * active {@link com.google.android.gms.auth.api.signin.GoogleSignInAccount}.
+   *
+   * @param savedInstanceState state saved prior to configuration change (currently ignored).
+   */
 
 
   private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -62,6 +74,14 @@ public class MainActivity extends AppCompatActivity {
       viewModel.refreshRandom();
     });
 
+    /**
+     * Inflates options (action bar and overflow) menu resource, attaching the inflated items to the
+     * specified {@link Menu}.
+     *
+     * @param menu instance to which inflated items will be attached.
+     * @return {@code true}, indicating that options menu should be displayed.
+     */
+
   }
 
   @Override
@@ -70,6 +90,13 @@ public class MainActivity extends AppCompatActivity {
     getMenuInflater().inflate(R.menu.options, menu);
     return true;
   }
+  /**
+   * Handles selections from the options (action bar and overflow) menu.
+   *
+   * @param item selected menu item.
+   * @return {@code true} if item was handled (by this method or the superclass implementation),
+   * {@code false} otherwise.
+   */
 
   @Override
   public boolean onOptionsItemSelected(@NonNull MenuItem item) {

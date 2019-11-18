@@ -3,8 +3,14 @@ package dev.jbond.quizpop.model.entity;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
+import dev.jbond.quizpop.model.entity.Question.Difficulty;
 
+
+/**
+ * The type Game.
+ */
 @Entity(
     foreignKeys = {
         @ForeignKey(
@@ -13,6 +19,9 @@ import androidx.room.PrimaryKey;
             parentColumns = "user_id",
             onDelete = ForeignKey.CASCADE
         )
+    },
+    indices = {
+        @Index(value = {"total", "score"})
     }
 )
 public class Game {
@@ -21,44 +30,102 @@ public class Game {
   @ColumnInfo(name = "game_id")
   private long id;
 
-  private String difficulty;
+  private Difficulty difficulty;
 
   @ColumnInfo(name = "user_id", index = true)
-  private long userId;
+  private Long userId;
 
-  @ColumnInfo(index = true, name = "score")
   private int score;
 
+  private int total;
+
+  /**
+   * Gets id.
+   *
+   * @return the id
+   */
   public long getId() {
     return id;
   }
 
+  /**
+   * Sets id.
+   *
+   * @param id the id
+   */
   public void setId(long id) {
     this.id = id;
   }
 
+  /**
+   * Gets user id.
+   *
+   * @return the user id
+   */
   public Long getUserId() {
     return userId;
   }
 
+  /**
+   * Sets user id.
+   *
+   * @param userId the user id
+   */
   public void setUserId(Long userId) {
     this.userId = userId;
   }
 
+  /**
+   * Gets score.
+   *
+   * @return the score
+   */
   public int getScore() {
     return score;
   }
 
+  /**
+   * Sets score.
+   *
+   * @param score the score
+   */
   public void setScore(int score) {
     this.score = score;
   }
 
-  public void setDifficulty(String difficulty) {
-    this.difficulty = difficulty;
-  }
-
-  public String getDifficulty() {
+  /**
+   * Gets difficulty.
+   *
+   * @return the difficulty
+   */
+  public Difficulty getDifficulty() {
     return difficulty;
   }
 
+  /**
+   * Sets difficulty.
+   *
+   * @param difficulty the difficulty
+   */
+  public void setDifficulty(Difficulty difficulty) {
+    this.difficulty = difficulty;
+  }
+
+  /**
+   * Gets total.
+   *
+   * @return the total
+   */
+  public int getTotal() {
+    return total;
+  }
+
+  /**
+   * Sets total.
+   *
+   * @param total the total
+   */
+  public void setTotal(int total) {
+    this.total = total;
+  }
 }

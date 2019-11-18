@@ -3,7 +3,6 @@ package dev.jbond.quizpop.service;
 import android.app.Activity;
 import android.app.Application;
 import android.content.Intent;
-import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -11,9 +10,11 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
+/**
+ * The type Google sign in service.
+ */
 public class GoogleSignInService {
 
   private static Application applicationContext;
@@ -32,22 +33,47 @@ public class GoogleSignInService {
     client = GoogleSignIn.getClient(applicationContext, options);
   }
 
+  /**
+   * Sets application context.
+   *
+   * @param applicationContext the application context
+   */
   public static void setApplicationContext(Application applicationContext) {
     GoogleSignInService.applicationContext = applicationContext;
   }
 
+  /**
+   * Gets instance.
+   *
+   * @return the instance
+   */
   public static GoogleSignInService getInstance() {
     return InstanceHolder.INSTANCE;
   }
 
+  /**
+   * Gets account.
+   *
+   * @return the account
+   */
   public LiveData<GoogleSignInAccount> getAccount() {
     return account;
   }
 
+  /**
+   * Gets exception.
+   *
+   * @return the exception
+   */
   public LiveData<Exception> getException() {
     return exception;
   }
 
+  /**
+   * Refresh task.
+   *
+   * @return the task
+   */
   public Task<GoogleSignInAccount> refresh() {
     return client.silentSignIn()
         .addOnSuccessListener(this::update)
@@ -64,12 +90,24 @@ public class GoogleSignInService {
     exception.setValue(ex);
   }
 
+  /**
+   * Start sign in.
+   *
+   * @param activity    the activity
+   * @param requestCode the request code
+   */
   public void startSignIn(Activity activity, int requestCode) {
     update((GoogleSignInAccount) null);
     Intent intent = client.getSignInIntent();
     activity.startActivityForResult(intent, requestCode);
   }
 
+  /**
+   * Complete sign in task.
+   *
+   * @param data the data
+   * @return the task
+   */
   public Task<GoogleSignInAccount> completeSignIn(Intent data) {
     Task<GoogleSignInAccount> task = null;
     try {
@@ -81,6 +119,11 @@ public class GoogleSignInService {
     return task;
   }
 
+  /**
+   * Sign out task.
+   *
+   * @return the task
+   */
   public Task<Void> signOut() {
     return client.signOut()
         .addOnCompleteListener((account) -> update((GoogleSignInAccount) null));

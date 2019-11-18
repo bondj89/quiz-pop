@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "3369d9807da5f058b2d687b33b36cbf1",
+    "identityHash": "c9677443824ca45d25a42fffb3711b2c",
     "entities": [
       {
         "tableName": "User",
@@ -114,7 +114,7 @@
       },
       {
         "tableName": "Game",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`game_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `difficulty` TEXT, `user_id` INTEGER NOT NULL, `score` INTEGER NOT NULL, FOREIGN KEY(`user_id`) REFERENCES `User`(`user_id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`game_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `difficulty` TEXT, `user_id` INTEGER, `score` INTEGER NOT NULL, `total` INTEGER NOT NULL, FOREIGN KEY(`user_id`) REFERENCES `User`(`user_id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
         "fields": [
           {
             "fieldPath": "id",
@@ -132,11 +132,17 @@
             "fieldPath": "userId",
             "columnName": "user_id",
             "affinity": "INTEGER",
-            "notNull": true
+            "notNull": false
           },
           {
             "fieldPath": "score",
             "columnName": "score",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "total",
+            "columnName": "total",
             "affinity": "INTEGER",
             "notNull": true
           }
@@ -149,20 +155,21 @@
         },
         "indices": [
           {
+            "name": "index_Game_total_score",
+            "unique": false,
+            "columnNames": [
+              "total",
+              "score"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_Game_total_score` ON `${TABLE_NAME}` (`total`, `score`)"
+          },
+          {
             "name": "index_Game_user_id",
             "unique": false,
             "columnNames": [
               "user_id"
             ],
             "createSql": "CREATE INDEX IF NOT EXISTS `index_Game_user_id` ON `${TABLE_NAME}` (`user_id`)"
-          },
-          {
-            "name": "index_Game_score",
-            "unique": false,
-            "columnNames": [
-              "score"
-            ],
-            "createSql": "CREATE INDEX IF NOT EXISTS `index_Game_score` ON `${TABLE_NAME}` (`score`)"
           }
         ],
         "foreignKeys": [
@@ -242,7 +249,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '3369d9807da5f058b2d687b33b36cbf1')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'c9677443824ca45d25a42fffb3711b2c')"
     ]
   }
 }

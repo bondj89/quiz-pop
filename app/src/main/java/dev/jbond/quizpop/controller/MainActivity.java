@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
   private ViewPager viewPager;
 
   private TextView mTextMessage;
-  private Button randomButton;
 
   private String url = "https://opentdb.com/api.php?amount=25";
   private Handler handler = new Handler();
@@ -66,13 +64,10 @@ public class MainActivity extends AppCompatActivity {
     setContentView(R.layout.activity_main);
 //    viewPager = findViewById(R.id.view_pager);
 //    mTextMessage = findViewById(R.id.message);
-    randomButton = findViewById(R.id.randomButton);
 //    BottomNavigationView navigation = findViewById(R.id.navigation);
 //    navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     MainViewModel viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
-    randomButton.setOnClickListener(view -> {
-      viewModel.refreshRandom();
-    });
+
 
     /**
      * Inflates options (action bar and overflow) menu resource, attaching the inflated items to the

@@ -8,21 +8,12 @@
   android:layout_height="match_parent"
   tools:context=".controller.MainActivity">
 
-  <Button
-    android:id="@+id/randomButton"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Next"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintRight_toRightOf="parent"/>
-
   <fragment
     android:id="@+id/question_fragment"
     android:layout_width="0dp"
     android:layout_height="0dp"
     android:name="dev.jbond.quizpop.controller.QuestionFragment"
-    app:layout_constraintBottom_toTopOf="@id/randomButton"
+    app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintLeft_toLeftOf="parent"
     app:layout_constraintRight_toRightOf="parent"
     app:layout_constraintTop_toTopOf="parent"/>

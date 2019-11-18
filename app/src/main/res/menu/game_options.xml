@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<!--  TODO: Add tally item, referencing layout-->
+
+  <item
+    android:id="@+id/next"
+    android:icon="@drawable/ic_next"
+    android:orderInCategory="200"
+    android:title="Next Question"
+    app:showAsAction="always"/>
+
+  <item
+    android:id="@+id/new_game"
+    android:icon="@drawable/ic_replay"
+    android:orderInCategory="500"
+    android:title="New Game"
+    app:showAsAction="ifRoom"/>
+
+</menu>

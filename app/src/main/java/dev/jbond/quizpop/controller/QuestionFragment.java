@@ -1,7 +1,11 @@
 package dev.jbond.quizpop.controller;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -52,7 +56,7 @@ public class QuestionFragment extends Fragment implements AnswerAdapter.OnClickL
   @Override
   public void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-
+    setHasOptionsMenu(true);
 
   }
 
@@ -60,7 +64,7 @@ public class QuestionFragment extends Fragment implements AnswerAdapter.OnClickL
   @Override
   public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
       @Nullable Bundle savedInstanceState) {
-    view = inflater.inflate(R.layout.question_fragment, container, false);
+    view = inflater.inflate(R.layout.fragment_question, container, false);
     questionText = view.findViewById(R.id.question_text);
 
     return view;
@@ -70,13 +74,41 @@ public class QuestionFragment extends Fragment implements AnswerAdapter.OnClickL
   public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
     viewModel = ViewModelProviders.of(getActivity()).get(MainViewModel.class);
-    viewModel.getRandomQuestion();
+    viewModel.getGame().observe(this, (game) -> {
+      if (game != null) {
+        // TODO: Update display
+        Log.d(getClass().getSimpleName(), "game in progress");
+      } else {
+        viewModel.newGame();
+      }
+    });
     viewModel.getRandomQuestion().observe(this, (question) -> {
       if (question != null) {
         setUpUI(question);
       }
     });
-    viewModel.newGame();
+  }
+
+  @Override
+  public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+    inflater.inflate(R.menu.game_options, menu);
+    super.onCreateOptionsMenu(menu, inflater);
+  }
+
+  @Override
+  public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+    boolean handled = true;
+    switch (item.getItemId()) {
+      case R.id.next:
+        viewModel.refreshRandom();
+        break;
+      case R.id.new_game:
+        viewModel.newGame();
+        break;
+      default:
+        handled = super.onOptionsItemSelected(item);
+    }
+    return handled;
   }
 
   private void setUpUI(QuestionWithAnswers question) {

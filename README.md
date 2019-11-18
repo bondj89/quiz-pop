@@ -18,7 +18,7 @@ This app should appeal to people of all ages who enjoy trivia
 related activities, flexing their brain and competing with friends. 
 
 ## Summary
-+ Current state 
++ The current state of my trivia app is a Google sign in, 
 
 ## Links
 + [User Stories](docs/user-stories.md)

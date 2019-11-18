@@ -14,32 +14,15 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
-/**
- * The interface Quiz pop service.
- */
 public interface QuizPopService {
 
-  /**
-   * Gets instance.
-   *
-   * @return the instance
-   */
   static QuizPopService getInstance() {
     return InstanceHolder.INSTANCE;
   }
 
-  /**
-   * Random question single.
-   *
-   * @param count the count
-   * @return the single
-   */
   @GET("api.php")
   Single<QuestionResponse> randomQuestion(@Query("amount") int count);
 
-  /**
-   * The type Instance holder.
-   */
   class InstanceHolder {
 
     private static final QuizPopService INSTANCE;

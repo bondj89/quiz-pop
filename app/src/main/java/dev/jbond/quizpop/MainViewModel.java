@@ -18,6 +18,9 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+/**
+ * The type Main view model.
+ */
 public class MainViewModel extends AndroidViewModel {
 
   private static final int DEFAULT_NUMBER_OF_QUESTIONS = 25;
@@ -32,22 +35,32 @@ public class MainViewModel extends AndroidViewModel {
   private MutableLiveData<Game> game = new MutableLiveData<>(null);
 
 
+  /**
+   * Instantiates a new Main view model.
+   *
+   * @param application the application
+   */
   public MainViewModel(@NonNull Application application) {
     super(application);
     randQuestionList = new MutableLiveData<>();
     database = QuizPopDatabase.getInstance();
     executor = Executors.newSingleThreadExecutor();
-//    randomQuestion = database.getQuestionDao().getRandom();
-//    randomQuestion = Transformations.switchMap(refreshRandom,
-//        (ignoreBoolean) -> database.getQuestionDao().getRandom());
     createRandomQuestion();
     getRandomQuestionFromDb();
   }
 
+  /**
+   * Gets game.
+   *
+   * @return the game
+   */
   public LiveData<Game> getGame() {
     return game;
   }
 
+  /**
+   * Create random question.
+   */
   public void createRandomQuestion() {
     QuizPopService.getInstance().randomQuestion(DEFAULT_NUMBER_OF_QUESTIONS)
         .subscribeOn(Schedulers.from(executor))
@@ -55,7 +68,12 @@ public class MainViewModel extends AndroidViewModel {
         }));
   }
 
-  // Increment the counts in the database.
+  /**
+   * Record result.
+   * Increment the counts in the database.
+   * @param correct the correct
+   */
+
   // TODO: debug
   public void recordResult(boolean correct) {
     executor.submit(() -> {
@@ -68,7 +86,12 @@ public class MainViewModel extends AndroidViewModel {
     });
   }
 
-  // Create a new game in the database.
+  /**
+   *
+   * New game.
+   * Create a new game in the database.
+   */
+
   public void newGame() {
     executor.submit(() -> {
       Game game = new Game();
@@ -80,17 +103,30 @@ public class MainViewModel extends AndroidViewModel {
   }
 
 
+  /**
+   * Gets rand question list.
+   *
+   * @return the rand question list
+   */
   public LiveData<List<Question>> getRandQuestionList() {
 
     return randQuestionList;
   }
 
+  /**
+   * Get random question live data.
+   *
+   * @return the live data
+   */
   public LiveData<QuestionWithAnswers> getRandomQuestion(){
 
     return database.getQuestionDao().getRandom();
 
   }
 
+  /**
+   * Refresh random.
+   */
   public void refreshRandom() {
 //    refreshRandom.postValue(true);
       loadBatch();
@@ -139,8 +175,13 @@ public class MainViewModel extends AndroidViewModel {
           });
         });
   }
-  
 
+
+  /**
+   * Get rand question list size int.
+   *
+   * @return the int
+   */
   public int getRandQuestionListSize(){
     return randQuestionList.getValue().size();
   }

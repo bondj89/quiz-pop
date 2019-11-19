@@ -6,9 +6,9 @@ person who desires the new capability, usually a user or customer of the system.
 ```
 
 ```
-+ As a user, I want to show my high score by sharing a link, so that my friends can see. 
-
-+ As a trivia fanatic, I want to choose a topic, so that I can test my knowledge.   
++ As a daily commuter, I want to play trivia on the go, and a trivia app allows me to do that. 
+   
++ As a trivia fanatic, I want to test my trivia skills, so that I can stay fresh on my general knowledge. 
 
 + As a fan of Google, I would like to sign in with my Gmail account, so that I can sign in faster. 
 

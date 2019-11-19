@@ -24,7 +24,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * The type Question fragment.
+ * The type Question fragment that extends my fragment and implements AnswerAdapter.
  */
 public class QuestionFragment extends Fragment implements AnswerAdapter.OnClickListener {
 
@@ -122,7 +122,7 @@ public class QuestionFragment extends Fragment implements AnswerAdapter.OnClickL
     // in content do not change the layout size of the RecyclerView
     //recyclerView.setHasFixedSize(true);
     // use a linear layout manager
-    // specify an adapter (see also next example)
+    // specify an adapter
     if (question.getType() == Type.BOOLEAN) {
       Answer answer = new Answer();
       answer.setText("True");

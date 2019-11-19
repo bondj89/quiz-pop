@@ -1,5 +1,14 @@
 # Quiz Pop
 
+###### Developed by: [Joel Bond](https://github.com/bondj89) 
+
+###### Contact information:
+- [joelanthonybond@gmail.com](https://www.gmail.com)
+- [LinkedIn Profile](https://www.linkedin.com/in/bondcsm/)
+
+#### View Application Demo: 
+![Alt Text](docs/appdemo.gif)
+
 ## Introduction 
 For this android project, I chose to create a trivia app called Quiz Pop. Since this 
 is my first time ever building an app, I wanted it to be a challenging but fun experience. 
@@ -15,8 +24,9 @@ hits the "Next" button at the bottom of the screen, a new question will appear f
 chance to tackle the next question. 
 
 ## Current State of Completion
-(know bugs, )
-(stretch goals)
+Current state of my application is fully functional. Orientation is locked in Portrait.
+There are no known bugs at this time. If any errors are received, a Build -> Clean should resolve it. 
+
 
 ## Intended Users 
 Anyone that loves to play trivia from the palm of their hands. 
@@ -25,8 +35,9 @@ related activities, flexing their brain and competing with friends.
 
 
 ## Stretch Goals
-+ Tally or Displayed Percentage 
-+ Options Menu
++ Tally or Displayed Percentage. 
++ Add more organized styling
++ Options Menu for choosing difficulty or category. 
 
 ## Technical requirements & dependencies
 - Android API 29
@@ -55,7 +66,7 @@ related activities, flexing their brain and competing with friends.
 
 
 
-## Javadoc-generated technical documentation
+## [Javadoc-generated technical documentation](file:///Users/Bond/Desktop/bootcamp/projects/quiz-pop/docs/api/index.html)
 
 
 ## External Services Used
@@ -113,7 +124,7 @@ This app consumes the following services.
 + [Scrum Board](https://github.com/bondj89/quiz-pop/projects/1)
 
 
-## Future of App
+## Future State of App
 The future state of my Android Trivia app is to keep track of games played and display the user's 
 score. I would like to add an Options sections so the user can select difficulty and category. If 
 that goes well, then I'd like to work on the styling. 

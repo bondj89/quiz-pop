@@ -12,7 +12,7 @@
     android:id="@+id/question_text"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="@string/heeey"
+    android:text="@string/welcome_to_quiz_pop"
     android:paddingTop="40dp"
     app:layout_constraintStart_toStartOf="parent"
     android:textSize="20sp"

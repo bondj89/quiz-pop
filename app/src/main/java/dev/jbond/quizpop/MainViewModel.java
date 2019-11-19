@@ -69,12 +69,11 @@ public class MainViewModel extends AndroidViewModel {
   }
 
   /**
-   * Record result.
-   * Increment the counts in the database.
+   * Record result. Increment the counts in the database.
+   *
    * @param correct the correct
    */
-
-  // TODO: debug
+// TODO: debug
   public void recordResult(boolean correct) {
     executor.submit(() -> {
       Game game = this.game.getValue();
@@ -87,11 +86,8 @@ public class MainViewModel extends AndroidViewModel {
   }
 
   /**
-   *
-   * New game.
-   * Create a new game in the database.
+   * New game. Create a new game in the database.
    */
-
   public void newGame() {
     executor.submit(() -> {
       Game game = new Game();

@@ -17,8 +17,8 @@ import dev.jbond.quizpop.service.GoogleSignInService;
 
 
 /**
- * Main user interface for accessing a passphrase storage service, providing creation (including
- * random generation using a diceware word list),
+ * Main user interface for accessing a passphrase storage service, providing creation,
+ * listing, updating, and deletion.
  */
 public class MainActivity extends AppCompatActivity {
 
@@ -40,25 +40,6 @@ public class MainActivity extends AppCompatActivity {
    */
 
 
-//  private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-//      = new BottomNavigationView.OnNavigationItemSelectedListener() {
-//
-//    @Override
-//    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//      switch (item.getItemId()) {
-//        case R.id.navigation_home:
-//          mTextMessage.setText(R.string.title_home);
-//          return true;
-//        case R.id.navigation_dashboard:
-//          mTextMessage.setText(R.string.title_dashboard);
-//          return true;
-//        case R.id.navigation_notifications:
-//          mTextMessage.setText(R.string.title_notifications);
-//          return true;
-//      }
-//      return false;
-//    }
-//  };
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);

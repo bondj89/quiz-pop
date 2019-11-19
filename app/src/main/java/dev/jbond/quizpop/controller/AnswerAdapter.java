@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import dev.jbond.quizpop.R;
 import dev.jbond.quizpop.model.entity.Answer;
 import java.util.List;
+
 /**
  * The type Answer adapter.
  */

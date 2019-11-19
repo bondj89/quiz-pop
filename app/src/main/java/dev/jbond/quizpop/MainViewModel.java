@@ -139,12 +139,7 @@ public class MainViewModel extends AndroidViewModel {
           });
         });
   }
-
-//  public boolean onOptionMulti(TextView selectedOptionText) {
-//    String option = selectedOptionText.getText().toString();
-//    if ()
-//
-//  }
+  
 
   public int getRandQuestionListSize(){
     return randQuestionList.getValue().size();

@@ -23,13 +23,34 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * The type Question fragment.
+ */
 public class QuestionFragment extends Fragment implements AnswerAdapter.OnClickListener {
 
+  /**
+   * The View.
+   */
   View view;
+  /**
+   * The Recycler view.
+   */
   RecyclerView recyclerView;
+  /**
+   * The Adapter.
+   */
   AnswerAdapter adapter;
+  /**
+   * The View model.
+   */
   MainViewModel viewModel;
+  /**
+   * The Question.
+   */
   QuestionWithAnswers question;
+  /**
+   * The Question text.
+   */
   TextView questionText;
 
   @Override

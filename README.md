@@ -1,4 +1,5 @@
-## Welcome to Quiz Pop - An unlimited grab-an-go trivia game.  
+## Welcome to Quiz Pop 
+### An unlimited grab-an-go trivia game.  
 
 ###### Developed by: [Joel Bond](https://github.com/bondj89) 
 
@@ -10,22 +11,24 @@
 ![Alt Text](docs/appdemo.gif)
 
 ## Introduction 
-For this android project, I chose to create a trivia app called Quiz Pop. Since this 
-is my first time ever building an app, I wanted it to be a challenging but fun experience. 
-My trivia app is simple and consists of multiple choice, true or false type questions of general 
-trivia knowledge and is never ending! 
+For my personal android project, I chose to create a trivia application called Quiz Pop. Since this 
+is my first time ever building an app, I wanted it to be a challenging and fun learning experience. 
+The app is simple and consists of an unlimited amount of multiple choice, true or false type questions 
+of popular topics. 
 
 ## Description 
-Developed in Java, my Native Android app called Quiz Pop is an all you can play 
+Developed in Java, my Android app called Quiz Pop is an all you can play 
 trivia game that allows players to answer questions from many different popular topics. 
 Questions are in the format of multiple choice and true or false. Questions will appear 
 on screen and the answers will highlight green once you select your choice. Once the user 
 hits the "Next" button at the bottom of the screen, a new question will appear for your 
-chance to tackle the next question. 
+chance to tackle the next question. The questions are never-ending so when you are tired of playing
+go ahead and sign out. 
 
 ## Current State of Completion
-Current state of my application is fully functional. Orientation is 
-locked in Portrait. There are no known bugs at this time. If any errors are received, please perform
+Current state of my application is fully functional with four TODOs. 
+Orientation is locked in Portrait. There are no known bugs at this time. 
+If any errors are received, please perform
 a Build -> Clean  and that should resolve any issues. 
  
 
@@ -41,6 +44,7 @@ related activities, flexing their brain and competing with friends.
 + Use a Tally or Displayed Percentage so the user can keep score. 
 + Add more organized styling, more specifically for the questions, answers and score.  
 + Options Menu for choosing difficulty or category. 
++ Get my logo uploaded in mimaps working.
 
 
 ## Technical requirements & dependencies
@@ -72,6 +76,7 @@ related activities, flexing their brain and competing with friends.
 
 
 #### [Javadoc-generated Technical Documentation](https://github.com/bondj89/quiz-pop/tree/master/docs/api)
+
 
 ## External Services Used
 This app consumes the following services. 
@@ -130,8 +135,8 @@ This app consumes the following services.
 
 ## Future State of App
 The future state of my Android Trivia app is to keep track of games played and display the user's 
-score. I would like to add an Options sections so the user can select difficulty and category. If 
-that goes well, then I'd like to work on the styling. 
+score. I would like to add an Options section so the user can select difficulty and category. If 
+that works out successfully, then I'd like to work on the styling. 
 
 
 

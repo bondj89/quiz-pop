@@ -30,23 +30,31 @@ import java.util.List;
 public class QuestionFragment extends Fragment implements AnswerAdapter.OnClickListener {
 
 
+  /**
+   * The View.
+   */
   View view;
+
   /**
    * The Recycler view.
    */
   RecyclerView recyclerView;
+
   /**
    * The Adapter.
    */
   AnswerAdapter adapter;
+
   /**
    * The View model.
    */
   MainViewModel viewModel;
+
   /**
    * The Question.
    */
   QuestionWithAnswers question;
+
   /**
    * The Question text.
    */

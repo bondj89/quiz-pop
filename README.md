@@ -75,7 +75,7 @@ related activities, flexing their brain and competing with friends.
 6. When the user is done with the quiz, the user can sign out of the app using the Ellipsis button.   
 
 
-#### [Javadoc-generated Technical Documentation](https://github.com/bondj89/quiz-pop/tree/master/docs/api)
+#### [Javadoc-generated Technical Documentation](docs/api/overview-summary.html)
 
 
 ## External Services Used

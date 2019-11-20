@@ -1,12 +1,12 @@
-# Quiz Pop
+## Welcome to Quiz Pop - An unlimited grab-an-go trivia game.  
 
 ###### Developed by: [Joel Bond](https://github.com/bondj89) 
 
-###### Contact information:
+##### Contact information:
 - [joelanthonybond@gmail.com](https://www.gmail.com)
 - [LinkedIn Profile](https://www.linkedin.com/in/bondcsm/)
 
-#### View Application Demo: 
+#### Application Demo: 
 ![Alt Text](docs/appdemo.gif)
 
 ## Introduction 
@@ -24,8 +24,10 @@ hits the "Next" button at the bottom of the screen, a new question will appear f
 chance to tackle the next question. 
 
 ## Current State of Completion
-Current state of my application is fully functional. Orientation is locked in Portrait.
-There are no known bugs at this time. If any errors are received, a Build -> Clean should resolve it. 
+Current state of my application is fully functional. Orientation is 
+locked in Portrait. There are no known bugs at this time. If any errors are received, please perform
+a Build -> Clean  and that should resolve any issues. 
+ 
 
 
 ## Intended Users 
@@ -35,9 +37,11 @@ related activities, flexing their brain and competing with friends.
 
 
 ## Stretch Goals
-+ Tally or Displayed Percentage. 
-+ Add more organized styling
++ Install a TextView that can convert the html in my question fragment. 
++ Use a Tally or Displayed Percentage so the user can keep score. 
++ Add more organized styling, more specifically for the questions, answers and score.  
 + Options Menu for choosing difficulty or category. 
+
 
 ## Technical requirements & dependencies
 - Android API 29
@@ -56,25 +60,25 @@ related activities, flexing their brain and competing with friends.
 7. If there are any errors while building, please Build -> Clean project, then ReBuild. 
 8. Be sure to build the app onto a device running a minimum of API 21.(Tested on API Level 29.)
 
+
 ## Instructions for Using Quiz Pop
 1. The initial view is the Home screen where the Quiz Pop Logo appears. 
 2. To play you must sign in using the Google sign in button below the Quiz Pop logo. 
 3. Once signed in, questions will appear. 
 4. Make your selection by clicking on your answer. If correct, answer will highlight in green. 
+5. Navigate to the next question by clicking on the "Next" button or by using the icons at the top right. 
 5. The top navigation bar displays three icons: Next button, Restart button and the Ellipsis button. 
 6. When the user is done with the quiz, the user can sign out of the app using the Ellipsis button.   
 
 
-
 #### [Javadoc-generated Technical Documentation](https://github.com/bondj89/quiz-pop/tree/master/docs/api)
-
 
 ## External Services Used
 This app consumes the following services. 
 
-[Google Sign-In](https://developers.google.com/identity/sign-in/android/start-integrating)
++ [Google Sign-In](https://developers.google.com/identity/sign-in/android/start-integrating)
 
-[OpenTrivia Database](https://opentdb.com/api_config.php/)
++ [OpenTrivia Database](https://opentdb.com/api_config.php/)
 
 
 ## Third Party Libraries
@@ -131,13 +135,11 @@ that goes well, then I'd like to work on the styling.
 
 
 
-## Copyright
+## Copyright & License 
 
-Quiz Pop - Multi-choice, true or false trivia android app.
-
-    Copyright (C) 2019  Joel Bond
+Quiz Pop - Multi-choice, true or false trivia android app. 
+Copyright (C) 2019  Joel Bond
     
-+ [License Information](LICENSE)
 + [License](https://github.com/bondj89/quiz-pop/blob/master/LICENSE)
 + [Apache Commons License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
 

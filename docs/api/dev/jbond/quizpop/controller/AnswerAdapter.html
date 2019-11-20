@@ -100,10 +100,10 @@ var activeTableTab = "activeTableTab";
 <li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
 <li>
 <ul class="inheritance">
-<li><a href="https://developer.android.com/reference/androidx/recyclerview/widget/RecyclerView.Adapter.html?is-external=true" title="class or interface in androidx.recyclerview.widget">androidx.recyclerview.widget.RecyclerView.Adapter</a>&lt;dev.jbond.quizpop.controller.AnswerAdapter.MyViewHolder&gt;</li>
+<li><a href="https://developer.android.com/reference/androidx/recyclerview/widget/RecyclerView.Adapter.html?is-external=true" title="class or interface in androidx.recyclerview.widget">androidx.recyclerview.widget.RecyclerView.Adapter</a>&lt;dev.jbond.quizpop.view.AnswerAdapter.MyViewHolder&gt;</li>
 <li>
 <ul class="inheritance">
-<li>dev.jbond.quizpop.controller.AnswerAdapter</li>
+<li>dev.jbond.quizpop.view.AnswerAdapter</li>
 </ul>
 </li>
 </ul>
@@ -115,7 +115,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">AnswerAdapter</span>
-extends <a href="https://developer.android.com/reference/androidx/recyclerview/widget/RecyclerView.Adapter.html?is-external=true" title="class or interface in androidx.recyclerview.widget">RecyclerView.Adapter</a>&lt;dev.jbond.quizpop.controller.AnswerAdapter.MyViewHolder&gt;</pre>
+extends <a href="https://developer.android.com/reference/androidx/recyclerview/widget/RecyclerView.Adapter.html?is-external=true" title="class or interface in androidx.recyclerview.widget">RecyclerView.Adapter</a>&lt;dev.jbond.quizpop.view.AnswerAdapter.MyViewHolder&gt;</pre>
 <div class="block">The type Answer adapter.</div>
 </li>
 </ul>
@@ -156,7 +156,7 @@ extends <a href="https://developer.android.com/reference/androidx/recyclerview/w
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../../dev/jbond/quizpop/controller/AnswerAdapter.html#AnswerAdapter-android.content.Context-dev.jbond.quizpop.controller.AnswerAdapter.OnClickListener-java.util.List-">AnswerAdapter</a></span>(<a href="https://developer.android.com/reference/android/content/Context.html?is-external=true" title="class or interface in android.content">Context</a>&nbsp;context,
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../dev/jbond/quizpop/controller/AnswerAdapter.html#AnswerAdapter-android.content.Context-dev.jbond.quizpop.view.AnswerAdapter.OnClickListener-java.util.List-">AnswerAdapter</a></span>(<a href="https://developer.android.com/reference/android/content/Context.html?is-external=true" title="class or interface in android.content">Context</a>&nbsp;context,
              <a href="../../../../dev/jbond/quizpop/controller/AnswerAdapter.OnClickListener.html" title="interface in dev.jbond.quizpop.controller">AnswerAdapter.OnClickListener</a>&nbsp;listener,
              <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../dev/jbond/quizpop/model/entity/Answer.html" title="class in dev.jbond.quizpop.model.entity">Answer</a>&gt;&nbsp;answers)</code>
 <div class="block">Instantiates a new Answer adapter.</div>
@@ -189,11 +189,11 @@ extends <a href="https://developer.android.com/reference/androidx/recyclerview/w
 </tr>
 <tr class="altColor" id="i2">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jbond/quizpop/controller/AnswerAdapter.html#onBindViewHolder-dev.jbond.quizpop.controller.AnswerAdapter.MyViewHolder-int-">onBindViewHolder</a></span>(dev.jbond.quizpop.controller.AnswerAdapter.MyViewHolder&nbsp;holder,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jbond/quizpop/controller/AnswerAdapter.html#onBindViewHolder-dev.jbond.quizpop.view.AnswerAdapter.MyViewHolder-int-">onBindViewHolder</a></span>(dev.jbond.quizpop.view.AnswerAdapter.MyViewHolder&nbsp;holder,
                 int&nbsp;position)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor" id="i3">
-<td class="colFirst"><code>dev.jbond.quizpop.controller.AnswerAdapter.MyViewHolder</code></td>
+<td class="colFirst"><code>dev.jbond.quizpop.view.AnswerAdapter.MyViewHolder</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jbond/quizpop/controller/AnswerAdapter.html#onCreateViewHolder-android.view.ViewGroup-int-">onCreateViewHolder</a></span>(<a href="https://developer.android.com/reference/android/view/ViewGroup.html?is-external=true" title="class or interface in android.view">ViewGroup</a>&nbsp;parent,
                   int&nbsp;viewType)</code>&nbsp;</td>
 </tr>
@@ -232,7 +232,7 @@ extends <a href="https://developer.android.com/reference/androidx/recyclerview/w
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a name="AnswerAdapter-android.content.Context-dev.jbond.quizpop.controller.AnswerAdapter.OnClickListener-java.util.List-">
+<a name="AnswerAdapter-android.content.Context-dev.jbond.quizpop.view.AnswerAdapter.OnClickListener-java.util.List-">
 <!--   -->
 </a>
 <ul class="blockListLast">
@@ -265,27 +265,27 @@ extends <a href="https://developer.android.com/reference/androidx/recyclerview/w
 <li class="blockList">
 <h4>onCreateViewHolder</h4>
 <pre><a href="https://developer.android.com/reference/androidx/annotation/NonNull.html?is-external=true" title="class or interface in androidx.annotation">@NonNull</a>
-public&nbsp;dev.jbond.quizpop.controller.AnswerAdapter.MyViewHolder&nbsp;onCreateViewHolder(<a href="https://developer.android.com/reference/androidx/annotation/NonNull.html?is-external=true" title="class or interface in androidx.annotation">@NonNull</a>
+public&nbsp;dev.jbond.quizpop.view.AnswerAdapter.MyViewHolder&nbsp;onCreateViewHolder(<a href="https://developer.android.com/reference/androidx/annotation/NonNull.html?is-external=true" title="class or interface in androidx.annotation">@NonNull</a>
                                                                                            <a href="https://developer.android.com/reference/android/view/ViewGroup.html?is-external=true" title="class or interface in android.view">ViewGroup</a>&nbsp;parent,
                                                                                            int&nbsp;viewType)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://developer.android.com/reference/androidx/recyclerview/widget/RecyclerView.Adapter.html?is-external=true#onCreateViewHolder-android.view.ViewGroup-int-" title="class or interface in androidx.recyclerview.widget">onCreateViewHolder</a></code>&nbsp;in class&nbsp;<code><a href="https://developer.android.com/reference/androidx/recyclerview/widget/RecyclerView.Adapter.html?is-external=true" title="class or interface in androidx.recyclerview.widget">RecyclerView.Adapter</a>&lt;dev.jbond.quizpop.controller.AnswerAdapter.MyViewHolder&gt;</code></dd>
+<dd><code><a href="https://developer.android.com/reference/androidx/recyclerview/widget/RecyclerView.Adapter.html?is-external=true#onCreateViewHolder-android.view.ViewGroup-int-" title="class or interface in androidx.recyclerview.widget">onCreateViewHolder</a></code>&nbsp;in class&nbsp;<code><a href="https://developer.android.com/reference/androidx/recyclerview/widget/RecyclerView.Adapter.html?is-external=true" title="class or interface in androidx.recyclerview.widget">RecyclerView.Adapter</a>&lt;dev.jbond.quizpop.view.AnswerAdapter.MyViewHolder&gt;</code></dd>
 </dl>
 </li>
 </ul>
-<a name="onBindViewHolder-dev.jbond.quizpop.controller.AnswerAdapter.MyViewHolder-int-">
+<a name="onBindViewHolder-dev.jbond.quizpop.view.AnswerAdapter.MyViewHolder-int-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>onBindViewHolder</h4>
 <pre>public&nbsp;void&nbsp;onBindViewHolder(<a href="https://developer.android.com/reference/androidx/annotation/NonNull.html?is-external=true" title="class or interface in androidx.annotation">@NonNull</a>
-                             dev.jbond.quizpop.controller.AnswerAdapter.MyViewHolder&nbsp;holder,
+                             dev.jbond.quizpop.view.AnswerAdapter.MyViewHolder&nbsp;holder,
                              int&nbsp;position)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://developer.android.com/reference/androidx/recyclerview/widget/RecyclerView.Adapter.html?is-external=true#onBindViewHolder-VH-int-" title="class or interface in androidx.recyclerview.widget">onBindViewHolder</a></code>&nbsp;in class&nbsp;<code><a href="https://developer.android.com/reference/androidx/recyclerview/widget/RecyclerView.Adapter.html?is-external=true" title="class or interface in androidx.recyclerview.widget">RecyclerView.Adapter</a>&lt;dev.jbond.quizpop.controller.AnswerAdapter.MyViewHolder&gt;</code></dd>
+<dd><code><a href="https://developer.android.com/reference/androidx/recyclerview/widget/RecyclerView.Adapter.html?is-external=true#onBindViewHolder-VH-int-" title="class or interface in androidx.recyclerview.widget">onBindViewHolder</a></code>&nbsp;in class&nbsp;<code><a href="https://developer.android.com/reference/androidx/recyclerview/widget/RecyclerView.Adapter.html?is-external=true" title="class or interface in androidx.recyclerview.widget">RecyclerView.Adapter</a>&lt;dev.jbond.quizpop.view.AnswerAdapter.MyViewHolder&gt;</code></dd>
 </dl>
 </li>
 </ul>
@@ -326,7 +326,7 @@ public&nbsp;dev.jbond.quizpop.controller.AnswerAdapter.MyViewHolder&nbsp;onCreat
 <pre>public&nbsp;int&nbsp;getItemCount()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://developer.android.com/reference/androidx/recyclerview/widget/RecyclerView.Adapter.html?is-external=true#getItemCount--" title="class or interface in androidx.recyclerview.widget">getItemCount</a></code>&nbsp;in class&nbsp;<code><a href="https://developer.android.com/reference/androidx/recyclerview/widget/RecyclerView.Adapter.html?is-external=true" title="class or interface in androidx.recyclerview.widget">RecyclerView.Adapter</a>&lt;dev.jbond.quizpop.controller.AnswerAdapter.MyViewHolder&gt;</code></dd>
+<dd><code><a href="https://developer.android.com/reference/androidx/recyclerview/widget/RecyclerView.Adapter.html?is-external=true#getItemCount--" title="class or interface in androidx.recyclerview.widget">getItemCount</a></code>&nbsp;in class&nbsp;<code><a href="https://developer.android.com/reference/androidx/recyclerview/widget/RecyclerView.Adapter.html?is-external=true" title="class or interface in androidx.recyclerview.widget">RecyclerView.Adapter</a>&lt;dev.jbond.quizpop.view.AnswerAdapter.MyViewHolder&gt;</code></dd>
 </dl>
 </li>
 </ul>

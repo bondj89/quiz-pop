@@ -1,4 +1,4 @@
-package dev.jbond.quizpop.controller;
+package dev.jbond.quizpop.view;
 
 import android.content.Context;
 import android.graphics.Color;

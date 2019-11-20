@@ -19,6 +19,7 @@ import dev.jbond.quizpop.R;
 import dev.jbond.quizpop.model.entity.Answer;
 import dev.jbond.quizpop.model.entity.Question.Type;
 import dev.jbond.quizpop.model.pojo.QuestionWithAnswers;
+import dev.jbond.quizpop.view.AnswerAdapter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -28,9 +29,7 @@ import java.util.List;
  */
 public class QuestionFragment extends Fragment implements AnswerAdapter.OnClickListener {
 
-  /**
-   * The View.
-   */
+
   View view;
   /**
    * The Recycler view.

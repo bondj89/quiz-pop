@@ -66,7 +66,7 @@ related activities, flexing their brain and competing with friends.
 
 
 
-## [Javadoc-generated technical documentation](file:///Users/Bond/Desktop/bootcamp/projects/quiz-pop/docs/api/index.html)
+#### [Javadoc-generated Technical Documentation](https://github.com/bondj89/quiz-pop/tree/master/docs/api)
 
 
 ## External Services Used

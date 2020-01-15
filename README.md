@@ -32,7 +32,6 @@ If any errors are received, please perform
 a Build -> Clean  and that should resolve any issues. 
  
 
-
 ## Intended Users 
 Anyone that loves to play trivia from the palm of their hands. 
 This app should appeal to people of all ages who enjoy trivia 
@@ -54,7 +53,7 @@ related activities, flexing their brain and competing with friends.
 - Gradle 3.2.1
 
 
-## Instructions for Building the Quiz Pop
+## Instructions for Building Quiz Pop
 1. Clone the repository using the green "Clone or Download" button.  
 2. Go to your IDE and choose new project from version control using Git.
 3. Paste the url that was copied at the repository but do not open the project. 
